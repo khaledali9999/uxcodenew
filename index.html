@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UXCode | مصمم واجهات وتجارب مستخدم ومطور ويب</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body class="min-h-screen">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-[#fffaf6]/90 backdrop-blur">
+<nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+<a href="#" class="text-2xl font-extrabold"><span class="txt-o">UX</span>Code</a>
+<ul class="hidden md:flex gap-8 text-sm">
+<li><a href="#home" class="txt-o font-semibold border-b-2 border-[color:var(--o)] pb-1">الرئيسية</a></li>
+<li><a href="#works">أعمالي</a></li><li><a href="#services">خدماتي</a></li><li><a href="#about">من نحن</a></li><li><a href="#contact">تواصل معي</a></li></ul>
+<a href="#contact" class="btn btn-o hidden md:inline-flex"><span data-i="chat" class="w-4 h-4"></span>تواصل معي</a>
+<button id="menuBtn" class="md:hidden w-7 h-7" aria-label="القائمة"><span data-i="menu" class="block w-7 h-7"></span></button>
+</nav>
+<div id="mobileMenu" class="hidden md:hidden px-4 pb-4 flex flex-col gap-3 text-sm"><a href="#home">الرئيسية</a><a href="#works">أعمالي</a><a href="#services">خدماتي</a><a href="#about">من نحن</a><a href="#contact">تواصل معي</a></div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-6 grid md:grid-cols-2 gap-8 items-center">
+<div>
+
+<h1 class="text-4xl md:text-5xl font-extrabold leading-tight mt-3 text-[#3a2314] flex flex-col gap-3">
+  <span>نصمم. نبرمج.</span>
+  <span>نحوّل الأفكار إلى <span class="txt-o">واقع</span></span>
+  <span class="txt-o">رقمي متكامل.</span>
+</h1>
+<p class="text-sm text-[color:var(--mute)] leading-7 mt-8 max-w-md">أحول الأفكار إلى منتجات رقمية متكاملة تجمع بين التصميم الإبداعي والتطوير الاحترافي، لأساعدك في بناء حضور رقمي قوي وتجربة مستخدم استثنائية.</p><div class="flex gap-3 mt-6"><a href="#works" class="btn btn-o">عرض أعمالي <span data-i="arrow" class="w-4 h-4"></span></a><a href="#contact" class="btn btn-w">تواصل معي</a></div>
+<div class="flex gap-10 mt-8">
+<div><p class="txt-o text-2xl font-extrabold">3+</p><p class="text-xs text-[color:var(--mute)]">سنوات خبرة</p></div>
+<div><p class="txt-o text-2xl font-extrabold">10+</p><p class="text-xs text-[color:var(--mute)]">مشروع مكتمل</p></div>
+<div><p class="txt-o text-2xl font-extrabold">100%</p><p class="text-xs text-[color:var(--mute)]">رضا العملاء</p></div></div>
+</div>
+<div class="relative"><div class="blob absolute inset-0 -z-0 opacity-70"></div>
+<img src="/ChatGPT Image Sep 28, 2026, 03_28_40 PM.png" alt="UXCode" class="relative w-full"></div>
+</section>
+
+<!-- Features -->
+<section class="max-w-6xl mx-auto px-4"><div class="card bg-[#fff1e8] p-6 grid grid-cols-2 md:grid-cols-5 gap-6"><div class="text-center"><span class="txt-o mx-auto block w-7 h-7" data-i="code"></span><p class="font-bold text-sm mt-2">كود نظيف</p><p class="text-[11px] text-[color:var(--mute)]">منظم وقابل للتطوير</p></div><div class="text-center"><span class="txt-o mx-auto block w-7 h-7" data-i="shield"></span><p class="font-bold text-sm mt-2">تسليم في الوقت</p><p class="text-[11px] text-[color:var(--mute)]">التزام تام بالمواعيد</p></div><div class="text-center"><span class="txt-o mx-auto block w-7 h-7" data-i="star"></span><p class="font-bold text-sm mt-2">جودة عالية</p><p class="text-[11px] text-[color:var(--mute)]">في كل تفصيلة</p></div><div class="text-center"><span class="txt-o mx-auto block w-7 h-7" data-i="chat"></span><p class="font-bold text-sm mt-2">تواصل مباشر</p><p class="text-[11px] text-[color:var(--mute)]">ومتابعة مستمرة</p></div><div class="text-center"><span class="txt-o mx-auto block w-7 h-7" data-i="clock"></span><p class="font-bold text-sm mt-2">دعم مستمر</p><p class="text-[11px] text-[color:var(--mute)]">بعد التسليم</p></div></div></section>
+
+<!-- Works -->
+<section id="works" class="max-w-6xl mx-auto px-4 py-16">
+<span class="inline-block rounded-full bg-[#fde6d8] txt-o text-xs font-semibold px-4 py-1.5">أعمالنا / Our Work</span>
+<h2 class="text-3xl md:text-5xl font-black text-[#3a2314] mt-4">أعمال تتحدث عن نفسها</h2>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-4">مشاريع حقيقية، وتجارب صممناها من الفكرة الأولى حتى الواجهة النهائية.</p>
+
+<div class="flex flex-wrap justify-center gap-2 mt-8">
+<button class="tab active" data-f="all">الكل</button><button class="tab" data-f="web">موقع ويب</button><button class="tab" data-f="mobile">تطبيقات موبايل</button><button class="tab" data-f="uiux">تصميم UI/UX</button><button class="tab" data-f="shop">متاجر إلكترونية</button></div>
+
+<div class="mt-12 flex flex-col gap-16">
+
+<article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="mobile">
+<div class="md:col-span-7"><img src="images/project-1.jpg" alt="Speak Smart AI" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-5">
+<span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">01</span>
+<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">Speak Smart AI</h3>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">منصة ذكية لتطوير مهارات التحدث باللغة الإنجليزية باستخدام الذكاء الاصطناعي.</p>
+<div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Mobile App</span><span class="rv-tag">AI</span><span class="rv-tag">UI/UX</span></div>
+<a href="#" class="btn btn-o mt-6">عرض دراسة الحالة <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></article>
+
+<article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="shop">
+<div class="md:col-span-7 md:order-2"><img src="images/project-2.jpg" alt="متجر إكسسوارات" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-5">
+<span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">02</span>
+<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">متجر إكسسوارات</h3>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">متجر إلكتروني متخصص في بيع الإكسسوارات (سلاسل - أساور - خواتم).</p>
+<div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">E-Commerce</span><span class="rv-tag">UI/UX</span></div>
+<a href="#" class="btn btn-o mt-6">عرض دراسة الحالة <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></article>
+
+<article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="web">
+<div class="md:col-span-7"><img src="images/project-3.jpg" alt="موقع سياحي" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-5">
+<span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">03</span>
+<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">موقع سياحي</h3>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">موقع تعريفي عن السياحة في مصر مع تصميم عصري وتجربة مستخدم مميزة.</p>
+<div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Website</span><span class="rv-tag">Tourism</span><span class="rv-tag">UI/UX</span></div>
+<a href="#" class="btn btn-o mt-6">عرض دراسة الحالة <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></article>
+
+<article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="web">
+<div class="md:col-span-7 md:order-2"><img src="images/project-4.jpg" alt="موقع مؤسسة خيرية" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-5">
+<span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">04</span>
+<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">موقع مؤسسة خيرية</h3>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">موقع تعريفي لمنظمة خيرية مع نظام تبرعات مكتمل.</p>
+<div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Website</span><span class="rv-tag">Donations</span></div>
+<a href="#" class="btn btn-o mt-6">عرض دراسة الحالة <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></article>
+
+<article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="uiux">
+<div class="md:col-span-7"><img src="images/project-5.jpg" alt="منصة تعليمية" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-5">
+<span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">05</span>
+<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">منصة تعليمية</h3>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">منصة تعليمية متكاملة مع نظام اشتراكات وتقييمات للطلاب.</p>
+<div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">UI/UX</span><span class="rv-tag">EdTech</span></div>
+<a href="#" class="btn btn-o mt-6">عرض دراسة الحالة <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></article>
+
+<article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="mobile">
+<div class="md:col-span-7 md:order-2"><img src="images/project-6.jpg" alt="تطبيق مطعم" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-5">
+<span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">06</span>
+<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">تطبيق مطعم</h3>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">تطبيق لطلب الطعام مع نظام تتبع الطلبات والدفع الإلكتروني.</p>
+<div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Mobile App</span><span class="rv-tag">Food</span><span class="rv-tag">UI/UX</span></div>
+<a href="#" class="btn btn-o mt-6">عرض دراسة الحالة <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></article>
+
+</div></section>
+<!-- About -->
+<section id="about" class="max-w-6xl mx-auto px-4 pb-16">
+<div class="card bg-[#fff1e8] p-6 md:p-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<div class="relative"><div class="blob absolute inset-0 opacity-60"></div><img src="/ChatGPT Image Sep 28, 2026, 04_07_43 PM.png" alt="فريق UXCode" class="relative w-full rounded-3xl"></div>
+<div>
+<span class="inline-block rounded-full bg-[#fde6d8] txt-o text-xs font-semibold px-4 py-1.5">من نحن / About Us</span>
+<h2 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4 leading-snug">شغفنا هو بناء تجارب رقمية استثنائية</h2>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-4">نحن فريق <b class="txt-o">UXCode</b>، مطورون ومصممو واجهات وتجارب مستخدم بخبرة تمتد لعدة سنوات في تصميم وتطوير المواقع والتطبيقات. نؤمن بأن التصميم الجيد لا يقتصر على المظهر فقط، بل هو حل حقيقي لاحتياجات المستخدم وتحقيق أهداف العمل.</p>
+<div class="grid grid-cols-3 gap-4 mt-6 text-center">
+<div><span class="txt-o mx-auto block w-8 h-8" data-i="users"></span><p class="font-bold text-base mt-2 text-[#3a2314]">العمل الجماعي</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1">نحب التعاون وبناء أفكار أكبر</p></div>
+<div><span class="txt-o mx-auto block w-8 h-8" data-i="desktop"></span><p class="font-bold text-base mt-2 text-[#3a2314]">تطوير الويب</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1">مواقع وتطبيقات متكاملة</p></div>
+<div><span class="txt-o mx-auto block w-8 h-8" data-i="brush"></span><p class="font-bold text-base mt-2 text-[#3a2314]">تصميم UI/UX</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1">نصمم تجارب سهلة وجذابة</p></div></div>
+<a href="#contact" class="btn btn-o mt-8">تعرّف علينا أكثر <span data-i="arrow" class="w-4 h-4"></span></a>
+</div></div></section>
+
+<!-- Services -->
+<section id="services" class="svc-sec">
+<div class="max-w-[1280px] mx-auto px-4 relative z-10">
+<p class="svc-eyebrow">خدماتنا</p>
+<h2 class="svc-h2">أقدم مجموعة متكاملة من الخدمات الرقمية</h2>
+<p class="svc-sub">أساعدك في تحويل أفكارك إلى منتجات رقمية احترافية تلبي احتياجاتك وتحقق أهدافك.</p>
+<div class="svc-grid">
+<article class="svc-card">
+<div class="svc-body">
+<span class="svc-ico" data-i="cart"></span>
+<h3 class="svc-title">متاجر إلكترونية</h3>
+<p class="svc-desc">متاجر إلكترونية متكاملة مع أنظمة<br>الدفع والشحن.</p>
+<a href="#" class="svc-more">المزيد <span data-i="arrow" class="w-[14px] h-[14px]"></span></a>
+</div>
+<img class="svc-img" src="images/ChatGPT Image Sep 28, 2026, 05_02_55 PM.png" alt="متاجر إلكترونية" loading="lazy">
+</article>
+<article class="svc-card">
+<div class="svc-body">
+<span class="svc-ico" data-i="desktop"></span>
+<h3 class="svc-title">تطوير المواقع الشخصيه</h3>
+<p class="svc-desc">مواقع ويب حديثة وسريعة وأمنة<br>تتلام مع متطلباتك.</p>
+<a href="#" class="svc-more">المزيد <span data-i="arrow" class="w-[14px] h-[14px]"></span></a>
+</div>
+<img class="svc-img" src="images/ChatGPT Image Sep 28, 2026, 05_10_20 PM.png" alt="تطوير المواقع" loading="lazy">
+</article>
+<article class="svc-card">
+<div class="svc-body">
+<span class="svc-ico" data-i="brush"></span>
+<h3 class="svc-title">تصمم UI/UX</h3>
+<p class="svc-desc">تصميم واجهات وتجارب مستخدم<br>تناسب جمهورك.</p>
+<a href="#" class="svc-more">المزيد <span data-i="arrow" class="w-[14px] h-[14px]"></span></a>
+</div>
+<img class="svc-img" src="/ChatGPT Image Sep 28, 2026, 05_14_27 PM.png" alt="تصمم UI/UX" loading="lazy">
+</article>
+<article class="svc-card">
+<div class="svc-body">
+<span class="svc-ico" data-i="server"></span>
+<h3 class="svc-title">مواقع الشركات</h3>
+<p class="svc-desc">تصميم مواقع عصرية<br>ومتكاملة لتلبية احتياجاتك.</p>
+<a href="#" class="svc-more">المزيد <span data-i="arrow" class="w-[14px] h-[14px]"></span></a>
+</div>
+<img class="svc-img" src="images/ChatGPT Image Sep 28, 2026, 05_16_33 PM.png" alt="إدارة مواقع" loading="lazy">
+</article>
+<article class="svc-card">
+<div class="svc-body">
+<span class="svc-ico" data-i="cog"></span>
+<h3 class="svc-title">متاجر إلكترونية</h3>
+<p class="svc-desc">متاجر إلكترونية متكاملة مع أنظمة<br>الدفع والشحن.</p>
+<a href="#" class="svc-more">المزيد <span data-i="arrow" class="w-[14px] h-[14px]"></span></a>
+</div>
+<img class="svc-img" src="images/ChatGPT Image Sep 28, 2026, 05_20_26 PM.png" alt="متاجر إلكترونية" loading="lazy">
+</article>
+<article class="svc-card">
+<div class="svc-body">
+<span class="svc-ico" data-i="chart"></span>
+<h3 class="svc-title">استشارات رقمية</h3>
+<p class="svc-desc">استشارات لتطوير المنتجات الرقمية<br>وتحسين تجربة المستخدم.</p>
+<a href="#" class="svc-more">المزيد <span data-i="arrow" class="w-[14px] h-[14px]"></span></a>
+</div>
+<img class="svc-img" src="images/ChatGPT Image Sep 28, 2026, 05_21_44 PM.png" alt="استشارات رقمية" loading="lazy">
+</article>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section id="reviews" class="max-w-6xl mx-auto px-4 pb-16">
+  <span class="inline-block rounded-full bg-[#fde6d8] txt-o text-xs font-semibold px-4 py-1.5">آراء العملاء / Testimonials</span>
+  <h2 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">الشغل بيتكلم... والعملاء بيأكدوا</h2>
+  <p class="text-sm text-[color:var(--mute)] leading-8 mt-4 max-w-xl">تجارب حقيقية من شركاء نجاح وثقوا في قدرتنا على تجسيد أفكارهم الطموحة وتحويلها إلى منتجات وتطبيقات رقمية متكاملة.</p>
+
+  <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 mt-10 items-start">
+    <!-- كارت الرأي + التحكم -->
+    <div>
+      <div class="relative bg-white rounded-3xl p-8 md:p-10 min-h-[320px] flex flex-col justify-between shadow-[0_20px_50px_-25px_rgba(120,70,40,.3)]">
+        <span class="absolute top-3 left-8 text-8xl leading-none font-serif text-[color:var(--o)]/15 select-none">”</span>
+        <p id="rvQuote" class="rv-fade text-xl md:text-2xl font-bold leading-[2] text-[#3a2314]"></p>
+        <div class="rv-fade flex items-center gap-3 mt-8">
+          <img id="rvAvatar" src="" alt="" class="w-12 h-12 rounded-xl object-cover">
+          <div><p id="rvName" class="font-bold text-sm"></p><p id="rvRole" class="text-xs text-[color:var(--mute)]"></p></div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between mt-6 px-1">
+        <div class="flex gap-2 items-center" id="rvNums"></div>
+        <div class="flex gap-2" dir="ltr">
+          <button id="rvPrev" aria-label="السابق" class="w-9 h-9 rounded-full border border-[#d9c9be] flex items-center justify-center"><span data-i="arrow" class="w-4 h-4"></span></button>
+          <button id="rvNext" aria-label="التالي" class="w-9 h-9 rounded-full bg-[color:var(--o)] text-white flex items-center justify-center"><span data-i="arrowr" class="w-4 h-4"></span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- كارت المشروع -->
+    <div>
+      <div class="rv-fade bg-white rounded-2xl p-3 shadow-[0_15px_40px_-20px_rgba(120,70,40,.3)]">
+        <div class="relative">
+          <img id="rvImg" src="" alt="" class="w-full h-44 object-cover rounded-xl">
+          <span id="rvBadge" class="absolute top-3 right-3 bg-[#2b2b2b] text-white text-[10px] font-bold px-3 py-1 rounded-lg"></span>
+        </div>
+        <div id="rvTags" class="flex gap-2 mt-3"></div>
+        <h3 id="rvTitle" class="font-bold text-sm mt-2"></h3>
+      </div>
+      <div class="flex items-center gap-3 mt-4 px-1">
+        <div class="flex -space-x-2 rtl:space-x-reverse">
+          <img src="images/client-1.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+          <img src="images/client-2.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+          <img src="images/client-3.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+        </div>
+        <div><p class="text-xs font-bold">+50 مشروع رقمي</p><p class="text-[10px] text-[color:var(--mute)]">تم تسليمها بنفس المعايير الفائقة</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CTA -->
+<section id="contact" class="max-w-6xl mx-auto px-4 pb-16">
+<div class="cta-box rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-5"><span class="txt-o block w-16 h-16 -rotate-12" data-i="plane"></span>
+<div><p class="txt-o text-xs font-semibold">تواصل معي</p><h2 class="text-2xl font-extrabold">لنبدأ مشروعك القادم معاً</h2>
+<p class="text-xs text-[color:var(--mute)] mt-1">هل لديك فكرة مشروع؟ أو ترغب في مناقشة تفاصيل أكثر أحد الخدمات؟ لا تتردد في التواصل معي.</p></div></div>
+<a href="mailto:hello@uxcode.com" class="btn btn-o shrink-0"><span data-i="plane" class="w-4 h-4"></span>أرسل رسالة</a>
+</div></section>
+
+<!-- Idea CTA -->
+<section id="start" class="cta2">
+<div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+<p class="cta2-top">عندك فكرة؟</p>
+<h2 class="cta2-h"><span>خلينا</span> <span class="cta2-u txt-o">نبنيها.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 13 C 35 5, 62 17, 100 9 S 165 5, 197 11" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h2>
+<p class="cta2-sub">احكيلنا عن مشروعك، وإحنا نحول الفكرة إلى تجربة رقمية متكاملة.</p>
+<div class="cta2-btns"><a href="mailto:hello@uxcode.com" class="btn btn-o">ابدأ مشروعك <span data-i="arrow" class="w-4 h-4"></span></a><a href="#contact" class="btn btn-w">تحدث معنا</a></div>
+</div></section>
+
+<!-- Footer -->
+<footer class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[color:var(--mute)]">
+<div><a href="#" class="text-2xl font-extrabold text-[color:var(--ink)]"><span class="txt-o">UX</span>Code</a><p>تصميم يلهم المستخدم، كود يبني المستقبل</p></div>
+<ul class="flex gap-6 text-[color:var(--ink)]"><li><a href="#home" class="txt-o">الرئيسية</a></li><li><a href="#works">أعمالي</a></li><li><a href="#services">خدماتي</a></li><li><a href="#about">من نحن</a></li><li><a href="#contact">تواصل معي</a></li></ul>
+<p>© 2025 UXCode. جميع الحقوق محفوظة</p>
+</footer>
+<script src="script.js"></script>
+</body></html>
