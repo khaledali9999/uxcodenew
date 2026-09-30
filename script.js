@@ -41,7 +41,7 @@ R.forEach((_,i)=>{const b=document.createElement('button');b.className='rv-num';
 function go(n){
   cur=(n+R.length)%R.length;const r=R[cur];
   $('rvQuote').innerHTML=r.q;$('rvName').textContent=r.name;$('rvRole').textContent=r.role;
-  $('rvAvatar').src=r.avatar;$('rvImg').src=r.img;$('rvBadge').textContent=r.badge;$('rvTitle').textContent=r.title;
+if($('rvAvatar'))$('rvAvatar').src=r.avatar;$('rvImg').src=r.img;$('rvBadge').textContent=r.badge;$('rvTitle').textContent=r.title;
   $('rvTags').innerHTML=r.tags.map(t=>`<span class="rv-tag">${t}</span>`).join('');
   nums.querySelectorAll('.rv-num').forEach((b,i)=>b.classList.toggle('active',i===cur));
   document.querySelectorAll('.rv-fade').forEach((e,i)=>{e.style.animationDelay=(i*.12)+'s';e.classList.remove('go');void e.offsetWidth;e.classList.add('go')});
