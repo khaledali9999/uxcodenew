@@ -83,9 +83,8 @@ go(0);
   G(hero,[...qa('h1 > span',hero),q('p',hero),q('.flex.gap-3',hero),...qa('.flex.gap-10 > div',hero)],.15,.12);
   G(hero,[q('.relative',hero)],.3,0,{y:20,s:.94});
 
-  // Features strip
-  const feat=q('#home + section .card');
-  G(feat,[feat,...feat.children],0,.09);
+ const feat=q('#features > div');
+if(feat) G(feat,[feat,...feat.children],0,.09);
 
   // Works header + projects
   const works=q('#works');
