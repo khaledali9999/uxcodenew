@@ -1,13 +1,44 @@
-/* UXCode — theme.css
-   حمّله بعد style.css. بيضيف: الدارك مود + أزرار التبديل + ضبط الإنجليزي (LTR) */
- 
+/* UXCode — theme.css  (حمّله بعد style.css) */
+
+/* ---------- متغيرات الثيم ---------- */
+:root{
+  --x-bg:#fffaf6;
+  --x-ink:#3a2314;
+  --x-surf:#ffffff;
+  --x-surf2:#f7f4ee;
+  --x-tint:#fff1e8;
+  --x-soft:#fde6d8;
+  --x-soft2:#ffede4;
+  --x-ph:#efe6dc;
+  --x-line:#ece4d8;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --x-bg:#15100c;
+  --x-ink:#f6ece4;
+  --x-surf:#221812;
+  --x-surf2:#1b130e;
+  --x-tint:#231810;
+  --x-soft:color-mix(in srgb,var(--o) 20%,transparent);
+  --x-soft2:color-mix(in srgb,var(--o) 14%,transparent);
+  --x-ph:#2a1e16;
+  --x-line:#3a2a1e;
+  /* متغيرات style.css الأصلية */
+  --ink:#f6ece4;
+  --mute:#b9a698;
+}
+
+html[data-theme="dark"] body{background:var(--x-bg) !important;color:var(--x-ink)}
+html[data-theme="dark"]{background:var(--x-bg)}
+.site-hdr{background:color-mix(in srgb,var(--x-bg) 90%,transparent)}
+
 /* ---------- أزرار التبديل ---------- */
 .ctl{
   display:inline-flex;align-items:center;justify-content:center;
   min-width:36px;height:36px;padding:0 10px;border-radius:999px;
-  border:1px solid #e6d8cc;background:transparent;color:#3a2314;
+  border:1px solid var(--x-line);background:transparent;color:var(--x-ink);
   font:700 12px/1 'Inter','Noto Kufi Arabic',sans-serif;cursor:pointer;
-  transition:background-color .2s,border-color .2s,color .2s;
+  transition:border-color .2s,color .2s;
 }
 .ctl:hover{border-color:var(--o);color:var(--o)}
 .ctl:focus-visible{outline:2px solid var(--o);outline-offset:2px}
@@ -15,94 +46,56 @@
 .ctl .ico-sun{display:none}
 html[data-theme="dark"] .ctl .ico-sun{display:block}
 html[data-theme="dark"] .ctl .ico-moon{display:none}
- 
-/* ---------- انتقال ناعم وقت التبديل فقط ---------- */
+
 html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{
   transition:background-color .3s,color .3s,border-color .3s !important;
 }
- 
-/* ---------- الدارك مود ---------- */
-html[data-theme="dark"]{
-  color-scheme:dark;
-  --ink:#f4ebe4;
-  --mute:#b8a79a;
-  --bg:#16100c;
-  --surf:#211812;
-  --surf2:#2a1f17;
-  --line:#3b2c20;
-}
-html[data-theme="dark"] body{background:var(--bg) !important;color:var(--ink)}
- 
-/* الهيدر */
-html[data-theme="dark"] header[class*="bg-[#fffaf6]"]{background:rgba(22,16,12,.88)}
-html[data-theme="dark"] .ctl{border-color:var(--line);color:var(--ink)}
- 
-/* ألوان النصوص اللي متكتبة hardcoded في Tailwind */
-html[data-theme="dark"] [class*="text-[#3a2314]"],
-html[data-theme="dark"] [class*="text-[#3b1f14]"]{color:var(--ink)}
-html[data-theme="dark"] [class*="text-[#7a7468]"]{color:var(--mute)}
- 
-/* الخلفيات */
-html[data-theme="dark"] .bg-white{background:var(--surf)}
-html[data-theme="dark"] [class*="bg-[#f7f4ee]"],
-html[data-theme="dark"] [class*="bg-[#fff1e8]"]{background:var(--surf2)}
-html[data-theme="dark"] [class*="bg-[#fde6d8]"],
-html[data-theme="dark"] [class*="bg-[#ffede4]"]{background:color-mix(in srgb,var(--o) 18%,transparent)}
-html[data-theme="dark"] [class*="bg-[#efe6dc]"]{background:var(--surf2)}
-html[data-theme="dark"] [class*="border-[#ece4d8]"],
-html[data-theme="dark"] [class*="border-[#d9c9be]"]{border-color:var(--line)}
-html[data-theme="dark"] .blob{opacity:.22 !important}
- 
-/* كروت المميزات على الديسكتوب بتبقى شفافة زي النسخة الفاتحة */
-@media (min-width:768px){
-  html[data-theme="dark"] #features .bg-white,
-  html[data-theme="dark"] #features [class*="bg-[#ffede4]"]{background:transparent}
-}
- 
-/* كروت وعناصر style.css */
-html[data-theme="dark"] .card{background:var(--surf2);border-color:var(--line)}
-html[data-theme="dark"] .btn-w{background:var(--surf);color:var(--ink);border-color:var(--line)}
-html[data-theme="dark"] .tab{background:var(--surf);color:var(--ink);border-color:var(--line)}
-html[data-theme="dark"] .tab.active{background:var(--o);color:#fff;border-color:var(--o)}
-html[data-theme="dark"] .rv-tag{background:var(--surf2);color:var(--ink);border-color:var(--line)}
- 
+
+/* ---------- الدارك: عناصر style.css (بنغطي الخلفيات والتدرجات كلها) ---------- */
+html[data-theme="dark"] .card{background:var(--x-tint) !important;border-color:var(--x-line) !important;box-shadow:none !important}
+html[data-theme="dark"] .btn-w{background:var(--x-surf) !important;color:var(--x-ink) !important;border:1px solid var(--x-line) !important}
+html[data-theme="dark"] .btn-w:hover{border-color:var(--o) !important}
+html[data-theme="dark"] .tab{background:var(--x-surf) !important;color:var(--x-ink) !important;border:1px solid var(--x-line) !important}
+html[data-theme="dark"] .tab.active{background:var(--o) !important;color:#fff !important;border-color:var(--o) !important}
+html[data-theme="dark"] .rv-tag{background:var(--x-soft) !important;color:var(--x-ink) !important;border:1px solid var(--x-line) !important}
+
 /* الخدمات */
-html[data-theme="dark"] .svc-sec{background:var(--bg)}
-html[data-theme="dark"] .svc-card{background:var(--surf);border-color:var(--line)}
+html[data-theme="dark"] .svc-sec{background:var(--x-surf2) !important;background-image:none !important}
+html[data-theme="dark"] .svc-sec::before,
+html[data-theme="dark"] .svc-sec::after{opacity:.15 !important}
+html[data-theme="dark"] .svc-card{background:var(--x-surf) !important;background-image:none !important;border:1px solid var(--x-line) !important;box-shadow:none !important}
 html[data-theme="dark"] .svc-h2,
-html[data-theme="dark"] .svc-title{color:var(--ink)}
+html[data-theme="dark"] .svc-title{color:var(--x-ink) !important}
 html[data-theme="dark"] .svc-sub,
-html[data-theme="dark"] .svc-desc{color:var(--mute)}
-html[data-theme="dark"] .svc-ico{background:color-mix(in srgb,var(--o) 18%,transparent)}
- 
+html[data-theme="dark"] .svc-desc{color:var(--mute) !important}
+html[data-theme="dark"] .svc-ico{background:var(--x-soft) !important}
+html[data-theme="dark"] .svc-eyebrow{color:var(--o) !important}
+
 /* الأسئلة الشائعة */
-html[data-theme="dark"] .faq2-sec{background:transparent}
-html[data-theme="dark"] .faq2-item{background:var(--surf);border-color:var(--line)}
+html[data-theme="dark"] .faq2-sec{background:transparent !important;background-image:none !important}
+html[data-theme="dark"] .faq2-item{background:var(--x-surf) !important;border:1px solid var(--x-line) !important;box-shadow:none !important}
 html[data-theme="dark"] .faq2-h2,
-html[data-theme="dark"] .faq2-q{color:var(--ink)}
+html[data-theme="dark"] .faq2-q{color:var(--x-ink) !important}
 html[data-theme="dark"] .faq2-sub,
-html[data-theme="dark"] .faq2-a{color:var(--mute)}
+html[data-theme="dark"] .faq2-a{color:var(--mute) !important}
 html[data-theme="dark"] .faq2-badge,
-html[data-theme="dark"] .faq2-ic{background:color-mix(in srgb,var(--o) 18%,transparent)}
- 
+html[data-theme="dark"] .faq2-ic{background:var(--x-soft) !important;color:var(--o) !important;border-color:transparent !important}
+
 /* CTA */
-html[data-theme="dark"] .cta2{background:var(--bg)}
+html[data-theme="dark"] .cta2{background:var(--x-surf2) !important;background-image:none !important}
 html[data-theme="dark"] .cta2-h,
-html[data-theme="dark"] .cta2-top{color:var(--ink)}
-html[data-theme="dark"] .cta2-sub{color:var(--mute)}
- 
+html[data-theme="dark"] .cta2-top{color:var(--x-ink) !important}
+html[data-theme="dark"] .cta2-sub{color:var(--mute) !important}
+
+/* الصور (الـ PNG الفاتحة ما تبقاش فاقعة على الدارك) + البلوب */
+html[data-theme="dark"] img{filter:brightness(.86) contrast(1.04)}
+html[data-theme="dark"] .blob{opacity:.2 !important}
+
 /* ---------- الإنجليزي (LTR) ---------- */
 html[lang="en"] body,
 html[lang="en"] body *{font-family:'Inter','Noto Kufi Arabic',system-ui,sans-serif}
- 
-/* سهم الأزرار يتقلب في اللغة اللي من الشمال لليمين */
 html[dir="ltr"] .btn [data-i="arrow"]{transform:scaleX(-1)}
- 
-/* الإنجليزي أعرض شوية من العربي، نهدّي العناوين الكبيرة */
 html[lang="en"] h1{letter-spacing:-.01em;line-height:1.12}
 html[lang="en"] h2{letter-spacing:-.01em}
- 
-/* ---------- احترام تقليل الحركة ---------- */
-@media (prefers-reduced-motion:reduce){
-  html.theme-anim *{transition:none !important}
-}
+
+@media (prefers-reduced-motion:reduce){html.theme-anim *{transition:none !important}}
