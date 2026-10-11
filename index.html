@@ -24,7 +24,7 @@
 </head>
 <body class="min-h-screen">
 <!-- Navbar -->
-<header class="sticky top-0 z-50 bg-[#fffaf6]/90 backdrop-blur">
+<header class="sticky top-0 z-50 site-hdr backdrop-blur">
 <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
 <a href="#" class="text-2xl font-extrabold"><span class="txt-o">UX</span>Code</a>
 <ul class="hidden md:flex gap-8 text-sm">
@@ -62,7 +62,7 @@
 <section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-6 grid md:grid-cols-2 gap-8 items-center">
   <div>
 
-    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mt-3 text-[#3a2314] flex flex-col gap-3">
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mt-3 text-[color:var(--x-ink)] flex flex-col gap-3">
       <span data-i18n="hero.l1">نصمم. نبرمج.</span>
       <span data-i18n="hero.l2">نحوّل الأفكار إلى <span class="txt-o">واقع</span></span>
       <span class="txt-o" data-i18n="hero.l3">رقمي متكامل.</span>
@@ -100,57 +100,57 @@
 
 <!-- Features -->
 <section id="features" class="max-w-6xl mx-auto px-4">
-  <div class="bg-[#f7f4ee] rounded-3xl px-4 pt-7 pb-6 md:card md:bg-[#fff1e8] md:p-6 md:rounded-none">
+  <div class="bg-[color:var(--x-surf2)] rounded-3xl px-4 pt-7 pb-6 md:card md:bg-[color:var(--x-tint)] md:p-6 md:rounded-none">
 
     <!-- هيدر الموبايل (مخفي على الديسكتوب) -->
     <div class="md:hidden text-center mb-7">
-      <span class="inline-flex items-center gap-2 bg-white border border-[#ece4d8] rounded-full px-4 py-1.5 text-[13px] font-bold text-[#3b1f14]">
+      <span class="inline-flex items-center gap-2 bg-[color:var(--x-surf)] border border-[color:var(--x-line)] rounded-full px-4 py-1.5 text-[13px] font-bold text-[color:var(--x-ink)]">
         UX Code <span class="txt-o">{+}</span>
       </span>
-      <h2 class="mt-5 text-[30px] leading-tight font-extrabold text-[#3b1f14]" data-i18n="feat.title">قيمة تكمّل مشروعك</h2>
-      <p class="mt-3 text-[14px] leading-7 text-[#7a7468] px-4" data-i18n="feat.sub">من أول سطر كود إلى ما بعد الإطلاق، نعمل معك بثقة ووضوح</p>
+      <h2 class="mt-5 text-[30px] leading-tight font-extrabold text-[color:var(--x-ink)]" data-i18n="feat.title">قيمة تكمّل مشروعك</h2>
+      <p class="mt-3 text-[14px] leading-7 text-[color:var(--mute)] px-4" data-i18n="feat.sub">من أول سطر كود إلى ما بعد الإطلاق، نعمل معك بثقة ووضوح</p>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-6">
 
-      <div class="text-center bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
-        <div class="mx-auto w-12 h-12 rounded-xl bg-[#ffede4] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
+      <div class="text-center bg-[color:var(--x-surf)] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
+        <div class="mx-auto w-12 h-12 rounded-xl bg-[color:var(--x-soft2)] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
           <span class="txt-o block w-6 h-6 md:w-7 md:h-7 md:mx-auto" data-i="code"></span>
         </div>
-        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[#3b1f14]" data-i18n="feat.1t">كود نظيف</p>
+        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[color:var(--x-ink)]" data-i18n="feat.1t">كود نظيف</p>
         <p class="text-[12px] md:text-[11px] mt-1 text-[color:var(--mute)]" data-i18n="feat.1d">منظم وقابل للتطوير</p>
       </div>
 
-      <div class="text-center bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
-        <div class="mx-auto w-12 h-12 rounded-xl bg-[#ffede4] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
+      <div class="text-center bg-[color:var(--x-surf)] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
+        <div class="mx-auto w-12 h-12 rounded-xl bg-[color:var(--x-soft2)] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
           <span class="txt-o block w-6 h-6 md:w-7 md:h-7 md:mx-auto" data-i="shield"></span>
         </div>
-        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[#3b1f14]" data-i18n="feat.2t">تسليم في الوقت</p>
+        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[color:var(--x-ink)]" data-i18n="feat.2t">تسليم في الوقت</p>
         <p class="text-[12px] md:text-[11px] mt-1 text-[color:var(--mute)]" data-i18n="feat.2d">التزام تام بالمواعيد</p>
       </div>
 
-      <div class="text-center bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
-        <div class="mx-auto w-12 h-12 rounded-xl bg-[#ffede4] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
+      <div class="text-center bg-[color:var(--x-surf)] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
+        <div class="mx-auto w-12 h-12 rounded-xl bg-[color:var(--x-soft2)] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
           <span class="txt-o block w-6 h-6 md:w-7 md:h-7 md:mx-auto" data-i="star"></span>
         </div>
-        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[#3b1f14]" data-i18n="feat.3t">جودة عالية</p>
+        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[color:var(--x-ink)]" data-i18n="feat.3t">جودة عالية</p>
         <p class="text-[12px] md:text-[11px] mt-1 text-[color:var(--mute)]" data-i18n="feat.3d">في كل تفصيلة</p>
       </div>
 
-      <div class="text-center bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
-        <div class="mx-auto w-12 h-12 rounded-xl bg-[#ffede4] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
+      <div class="text-center bg-[color:var(--x-surf)] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
+        <div class="mx-auto w-12 h-12 rounded-xl bg-[color:var(--x-soft2)] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
           <span class="txt-o block w-6 h-6 md:w-7 md:h-7 md:mx-auto" data-i="chat"></span>
         </div>
-        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[#3b1f14]" data-i18n="feat.4t">تواصل مباشر</p>
+        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[color:var(--x-ink)]" data-i18n="feat.4t">تواصل مباشر</p>
         <p class="text-[12px] md:text-[11px] mt-1 text-[color:var(--mute)]" data-i18n="feat.4d">ومتابعة مستمرة</p>
       </div>
 
       <!-- الكارت الأخير: عرض كامل في الموبايل -->
-      <div class="col-span-2 md:col-span-1 text-center bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
-        <div class="mx-auto w-12 h-12 rounded-xl bg-[#ffede4] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
+      <div class="col-span-2 md:col-span-1 text-center bg-[color:var(--x-surf)] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,.05)] px-3 py-6 md:bg-transparent md:shadow-none md:p-0">
+        <div class="mx-auto w-12 h-12 rounded-xl bg-[color:var(--x-soft2)] flex items-center justify-center md:w-auto md:h-auto md:bg-transparent">
           <span class="txt-o block w-6 h-6 md:w-7 md:h-7 md:mx-auto" data-i="clock"></span>
         </div>
-        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[#3b1f14]" data-i18n="feat.5t">دعم مستمر</p>
+        <p class="font-bold text-[15px] md:text-sm mt-4 md:mt-2 text-[color:var(--x-ink)]" data-i18n="feat.5t">دعم مستمر</p>
         <p class="text-[12px] md:text-[11px] mt-1 text-[color:var(--mute)]" data-i18n="feat.5d">بعد التسليم</p>
       </div>
 
@@ -160,8 +160,8 @@
 
 <!-- Works -->
 <section id="works" class="max-w-6xl mx-auto px-4 py-16">
-<span class="inline-block rounded-full bg-[#fde6d8] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="works.badge">أعمالنا / Our Work</span>
-<h2 class="text-3xl md:text-5xl font-black text-[#3a2314] mt-4" data-i18n="works.title">أعمال تتحدث عن نفسها</h2>
+<span class="inline-block rounded-full bg-[color:var(--x-soft)] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="works.badge">أعمالنا / Our Work</span>
+<h2 class="text-3xl md:text-5xl font-black text-[color:var(--x-ink)] mt-4" data-i18n="works.title">أعمال تتحدث عن نفسها</h2>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-4" data-i18n="works.sub">مشاريع حقيقية، وتجارب صممناها من الفكرة الأولى حتى الواجهة النهائية.</p>
 
 <div class="flex flex-wrap justify-center gap-2 mt-8">
@@ -170,10 +170,10 @@
 <div class="mt-12 flex flex-col gap-16">
 
 <article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="mobile">
-<div class="md:col-span-7"><img src="images/WhatsApp Image 2026-06-29 at 14.49.56.jpeg" alt="Speak Smart AI" class="w-full h-80 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-7"><img src="images/WhatsApp Image 2026-06-29 at 14.49.56.jpeg" alt="Speak Smart AI" class="w-full h-80 md:h-80 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
 <div class="md:col-span-5">
 <span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">01</span>
-<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">Speak Smart AI</h3>
+<h3 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4">Speak Smart AI</h3>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-3" data-i18n="p1.d">منصة ذكية لتطوير مهارات التحدث باللغة الإنجليزية باستخدام الذكاء الاصطناعي.</p>
 <div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Mobile App</span><span class="rv-tag">AI</span><span class="rv-tag">UI/UX</span></div>
 <a href="https://speak-ai-eight.vercel.app/"
@@ -186,30 +186,30 @@
 </div></article>
 
 <!-- <article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="shop">
-<div class="md:col-span-7 md:order-2"><img src="images/ChatGPT Image Sep 30, 2026, 12_36_18 AM.png" alt="متجر إكسسوارات" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-7 md:order-2"><img src="images/ChatGPT Image Sep 30, 2026, 12_36_18 AM.png" alt="متجر إكسسوارات" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
 <div class="md:col-span-5">
 <span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">02</span>
-<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">متجر إكسسوارات</h3>
+<h3 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4">متجر إكسسوارات</h3>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-3">متجر إلكتروني متخصص في بيع الإكسسوارات (سلاسل - أساور - خواتم).</p>
 <div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">E-Commerce</span><span class="rv-tag">UI/UX</span></div>
 <a href="#" class="btn btn-o mt-6">عرض المشروع<span data-i="arrow" class="w-4 h-4"></span></a>
 </div></article>
 
 <article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="web">
-<div class="md:col-span-7"><img src="images/WhatsApp Image 2026-09-30 at 00.01.27.jpeg" alt="موقع سياحي" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-7"><img src="images/WhatsApp Image 2026-09-30 at 00.01.27.jpeg" alt="موقع سياحي" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
 <div class="md:col-span-5">
 <span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">03</span>
-<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">موقع سياحي</h3>
+<h3 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4">موقع سياحي</h3>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-3">موقع تعريفي عن السياحة في مصر مع تصميم عصري وتجربة مستخدم مميزة.</p>
 <div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Website</span><span class="rv-tag">Tourism</span><span class="rv-tag">UI/UX</span></div>
 <a href="#" class="btn btn-o mt-6">عرض المشروع<span data-i="arrow" class="w-4 h-4"></span></a>
 </div></article> -->
 
 <article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="web">
-<div class="md:col-span-7 md:order-2"><img src="images/WhatsApp Image 2026-09-30 at 00.17.44.jpeg" alt="موقع مؤسسة خيرية" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-7 md:order-2"><img src="images/WhatsApp Image 2026-09-30 at 00.17.44.jpeg" alt="موقع مؤسسة خيرية" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
 <div class="md:col-span-5">
 <span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">02</span>
-<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4" data-i18n="p2.t">منصة تعليمية</h3>
+<h3 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4" data-i18n="p2.t">منصة تعليمية</h3>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-3" data-i18n="p2.d">منصة تعليمية متكاملة مع نظام اشتراكات وتقييمات للطلاب.</p>
 <div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Website</span><span class="rv-tag">Donations</span></div>
 <a href="https://tamakan.runasp.net/"
@@ -222,10 +222,10 @@
 </div></article>
 
 <article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="uiux">
-<div class="md:col-span-7"><img src="images/WhatsApp Image 2026-09-30 at 00.00.32.jpeg" alt="منصة تعليمية" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-7"><img src="images/WhatsApp Image 2026-09-30 at 00.00.32.jpeg" alt="منصة تعليمية" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
 <div class="md:col-span-5">
 <span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">03</span>
-<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4" data-i18n="p3.t">موقع شحن تطبيقات</h3>
+<h3 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4" data-i18n="p3.t">موقع شحن تطبيقات</h3>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-3" data-i18n="p3.d">منصة لشحن الماسات والعملات داخل تطبيقات البث المباشر مثل بارتي ستار، بطريقة سريعة وآمنة وبأسعار مناسبة.</p>
 <div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Website</span><span class="rv-tag">Recharge</span><span class="rv-tag">E-Payment</span></div>
 <a href="https://hostore2.com/"
@@ -238,10 +238,10 @@
 </div></article>
 
 <!-- <article class="proj grid md:grid-cols-12 gap-8 items-center" data-cat="mobile">
-<div class="md:col-span-7 md:order-2"><img src="images/project-6.jpg" alt="تطبيق مطعم" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[#efe6dc] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
+<div class="md:col-span-7 md:order-2"><img src="images/project-6.jpg" alt="تطبيق مطعم" class="w-full h-64 md:h-80 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]"></div>
 <div class="md:col-span-5">
 <span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">06</span>
-<h3 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4">تطبيق مطعم</h3>
+<h3 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4">تطبيق مطعم</h3>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-3">تطبيق لطلب الطعام مع نظام تتبع الطلبات والدفع الإلكتروني.</p>
 <div class="flex flex-wrap gap-2 mt-4"><span class="rv-tag">Mobile App</span><span class="rv-tag">Food</span><span class="rv-tag">UI/UX</span></div>
 <a href="#" class="btn btn-o mt-6">عرض المشروع<span data-i="arrow" class="w-4 h-4"></span></a>
@@ -250,16 +250,16 @@
 </div></section>
 <!-- About -->
 <section id="about" class="max-w-6xl mx-auto px-4 pb-16">
-<div class="card bg-[#fff1e8] p-6 md:p-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<div class="card bg-[color:var(--x-tint)] p-6 md:p-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 <div class="relative"><div class="blob absolute inset-0 opacity-60"></div><img src="images/ChatGPT Image Sep 28, 2026, 04_07_43 PM.png" alt="فريق UXCode" class="relative w-full rounded-3xl"></div>
 <div>
-<span class="inline-block rounded-full bg-[#fde6d8] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="about.badge">من نحن / About Us</span>
-<h2 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4 leading-snug" data-i18n="about.title">شغفنا هو بناء تجارب رقمية استثنائية</h2>
+<span class="inline-block rounded-full bg-[color:var(--x-soft)] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="about.badge">من نحن / About Us</span>
+<h2 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4 leading-snug" data-i18n="about.title">شغفنا هو بناء تجارب رقمية استثنائية</h2>
 <p class="text-sm text-[color:var(--mute)] leading-8 mt-4" data-i18n="about.p">نحن فريق <b class="txt-o">UXCode</b>، مطورون ومصممو واجهات وتجارب مستخدم بخبرة تمتد لعدة سنوات في تصميم وتطوير المواقع والتطبيقات. نؤمن بأن التصميم الجيد لا يقتصر على المظهر فقط، بل هو حل حقيقي لاحتياجات المستخدم وتحقيق أهداف العمل.</p>
 <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-<div><span class="txt-o mx-auto block w-8 h-8" data-i="users"></span><p class="font-bold text-base mt-2 text-[#3a2314]" data-i18n="about.1t">العمل الجماعي</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1" data-i18n="about.1d">نحب التعاون وبناء أفكار أكبر</p></div>
-<div><span class="txt-o mx-auto block w-8 h-8" data-i="desktop"></span><p class="font-bold text-base mt-2 text-[#3a2314]" data-i18n="about.2t">تطوير الويب</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1" data-i18n="about.2d">مواقع وتطبيقات متكاملة</p></div>
-<div><span class="txt-o mx-auto block w-8 h-8" data-i="brush"></span><p class="font-bold text-base mt-2 text-[#3a2314]" data-i18n="about.3t">تصميم UI/UX</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1" data-i18n="about.3d">نصمم تجارب سهلة وجذابة</p></div></div>
+<div><span class="txt-o mx-auto block w-8 h-8" data-i="users"></span><p class="font-bold text-base mt-2 text-[color:var(--x-ink)]" data-i18n="about.1t">العمل الجماعي</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1" data-i18n="about.1d">نحب التعاون وبناء أفكار أكبر</p></div>
+<div><span class="txt-o mx-auto block w-8 h-8" data-i="desktop"></span><p class="font-bold text-base mt-2 text-[color:var(--x-ink)]" data-i18n="about.2t">تطوير الويب</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1" data-i18n="about.2d">مواقع وتطبيقات متكاملة</p></div>
+<div><span class="txt-o mx-auto block w-8 h-8" data-i="brush"></span><p class="font-bold text-base mt-2 text-[color:var(--x-ink)]" data-i18n="about.3t">تصميم UI/UX</p><p class="text-xs text-[color:var(--mute)] leading-6 mt-1" data-i18n="about.3d">نصمم تجارب سهلة وجذابة</p></div></div>
 </div></div></section>
 
 <!-- Services -->
@@ -323,16 +323,16 @@
 
 <!-- Testimonials -->
 <section id="reviews" class="max-w-6xl mx-auto px-4 pb-16">
-  <span class="inline-block rounded-full bg-[#fde6d8] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="rv.badge">آراء العملاء / Testimonials</span>
-  <h2 class="text-3xl md:text-4xl font-black text-[#3a2314] mt-4" data-i18n="rv.title">الشغل بيتكلم... والعملاء بيأكدوا</h2>
+  <span class="inline-block rounded-full bg-[color:var(--x-soft)] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="rv.badge">آراء العملاء / Testimonials</span>
+  <h2 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4" data-i18n="rv.title">الشغل بيتكلم... والعملاء بيأكدوا</h2>
   <p class="text-sm text-[color:var(--mute)] leading-8 mt-4 max-w-xl" data-i18n="rv.sub">تجارب حقيقية من شركاء نجاح وثقوا في قدرتنا على تجسيد أفكارهم الطموحة وتحويلها إلى منتجات وتطبيقات رقمية متكاملة.</p>
 
   <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 mt-10 items-start">
     <!-- كارت الرأي + التحكم -->
     <div>
-      <div class="relative bg-white rounded-3xl p-8 md:p-10 min-h-[320px] flex flex-col justify-between shadow-[0_20px_50px_-25px_rgba(120,70,40,.3)]">
+      <div class="relative bg-[color:var(--x-surf)] rounded-3xl p-8 md:p-10 min-h-[320px] flex flex-col justify-between shadow-[0_20px_50px_-25px_rgba(120,70,40,.3)]">
         <span class="absolute top-3 left-8 text-8xl leading-none font-serif text-[color:var(--o)]/15 select-none">”</span>
-        <p id="rvQuote" class="rv-fade text-xl md:text-2xl font-bold leading-[2] text-[#3a2314]"></p>
+        <p id="rvQuote" class="rv-fade text-xl md:text-2xl font-bold leading-[2] text-[color:var(--x-ink)]"></p>
         <div class="rv-fade flex items-center gap-3 mt-8">
 
           <div><p id="rvName" class="font-bold text-sm"></p><p id="rvRole" class="text-xs text-[color:var(--mute)]"></p></div>
@@ -341,7 +341,7 @@
       <div class="flex items-center justify-between mt-6 px-1">
         <div class="flex gap-2 items-center" id="rvNums"></div>
         <div class="flex gap-2" dir="ltr">
-          <button id="rvPrev" aria-label="Previous" class="w-9 h-9 rounded-full border border-[#d9c9be] flex items-center justify-center"><span data-i="arrow" class="w-4 h-4"></span></button>
+          <button id="rvPrev" aria-label="Previous" class="w-9 h-9 rounded-full border border-[color:var(--x-line)] flex items-center justify-center"><span data-i="arrow" class="w-4 h-4"></span></button>
           <button id="rvNext" aria-label="Next" class="w-9 h-9 rounded-full bg-[color:var(--o)] text-white flex items-center justify-center"><span data-i="arrowr" class="w-4 h-4"></span></button>
         </div>
       </div>
