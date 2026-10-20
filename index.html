@@ -109,9 +109,60 @@ html[lang="en"] h1{letter-spacing:-.01em;line-height:1.12}
 html[lang="en"] h2{letter-spacing:-.01em}
 
 @media (prefers-reduced-motion:reduce){html.theme-anim *{transition:none !important}}
+/* ---------- شاشة التحميل ---------- */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+  background:var(--x-bg);
+  transition:opacity .5s ease,visibility .5s ease;
+}
+#loader.hide{opacity:0;visibility:hidden}
+html.is-loading{overflow:hidden}
 
+#loader .ld-logo{
+  direction:ltr;display:flex;align-items:center;gap:2px;
+  font:900 44px/1 'Inter','Noto Kufi Arabic',sans-serif;
+  color:var(--x-ink);letter-spacing:-.02em;
+  animation:ldPulse 1.6s ease-in-out infinite;
+}
+#loader .ld-logo b{color:var(--o)}
+#loader .ld-br{
+  color:var(--o);font-weight:800;opacity:.9;
+  animation:ldBr 1.2s ease-in-out infinite;
+}
+#loader .ld-br:last-child{animation-delay:.6s}
+
+#loader .ld-bar{
+  width:160px;height:4px;border-radius:999px;overflow:hidden;
+  background:var(--x-soft);
+}
+#loader .ld-bar::after{
+  content:"";display:block;height:100%;width:40%;border-radius:999px;
+  background:var(--o);
+  animation:ldBar 1.1s ease-in-out infinite;
+}
+#loader .ld-dots{display:flex;gap:6px}
+#loader .ld-dots i{
+  width:7px;height:7px;border-radius:50%;background:var(--o);
+  animation:ldDot 1s ease-in-out infinite;
+}
+#loader .ld-dots i:nth-child(2){animation-delay:.15s}
+#loader .ld-dots i:nth-child(3){animation-delay:.3s}
+
+@keyframes ldPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes ldBr{0%,100%{transform:translateX(0);opacity:.9}50%{transform:translateX(var(--mv,4px));opacity:.4}}
+#loader .ld-br:first-child{--mv:-5px}
+#loader .ld-br:last-child{--mv:5px}
+@keyframes ldBar{0%{transform:translateX(-120%)}100%{transform:translateX(350%)}}
+@keyframes ldDot{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-6px);opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  #loader *{animation:none !important}
+}
 </style>
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js")
+  d.classList.add('is-loading');
+</script>
 <!-- يضبط الثيم واللغة قبل أول رسم عشان ما يحصلش وميض -->
 <script>
 (function(){try{
@@ -126,6 +177,13 @@ html[lang="en"] h2{letter-spacing:-.01em}
 </script>
 </head>
 <body class="min-h-screen">
+  <div id="loader" role="status" aria-label="Loading">
+  <div class="ld-logo">
+    <span class="ld-br">&lt;</span><b>UX</b>Code<span class="ld-br">/&gt;</span>
+  </div>
+  <div class="ld-bar"></div>
+  <div class="ld-dots"><i></i><i></i><i></i></div>
+</div>
 <!-- Navbar -->
 <header class="sticky top-0 z-50 site-hdr backdrop-blur">
 <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -668,5 +726,21 @@ html[lang="en"] h2{letter-spacing:-.01em}
   window.UX = { T: T, lang: function () { return root.lang; }, theme: function () { return root.getAttribute('data-theme'); } };
 })();
 
+</script>
+  <script>
+(function(){
+  var start = Date.now(), MIN = 900; // أقل مدة عرض بالمللي ثانية
+  function done(){
+    var wait = Math.max(0, MIN - (Date.now() - start));
+    setTimeout(function(){
+      var l = document.getElementById('loader');
+      if(l){ l.classList.add('hide'); setTimeout(function(){ l.remove(); }, 600); }
+      document.documentElement.classList.remove('is-loading');
+    }, wait);
+  }
+  if (document.readyState === 'complete') done();
+  else window.addEventListener('load', done);
+  setTimeout(done, 6000); // احتياطي لو في صورة اتأخرت
+})();
 </script>
 </body></html>
