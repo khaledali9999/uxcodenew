@@ -15,6 +15,51 @@
   d.setAttribute('data-theme',t); d.lang=l; d.dir=(l==='ar'?'rtl':'ltr');
 }catch(e){}})();
 </script>
+<style>
+.pd-pill{display:inline-flex;align-items:center;gap:10px;padding:12px 26px;border-radius:999px;font-weight:800;font-size:14px;border:1.5px solid var(--o);color:var(--x-ink);background:var(--x-surf)}
+.pd-pill.fill{background:linear-gradient(90deg,#ff6a00,#ff9a2e);color:#fff;border-color:transparent}
+.pd-eyebrow{display:flex;align-items:center;gap:12px;font-weight:800;font-size:15px;color:var(--x-ink)}
+.pd-eyebrow::before{content:"";width:44px;height:3px;border-radius:3px;background:var(--o)}
+.pd-h2{font-weight:900;color:var(--x-ink);font-size:clamp(28px,4.2vw,46px);line-height:1.25}
+.pd-h2::after{content:"";display:block;width:64px;height:3px;border-radius:3px;background:var(--o);margin-top:10px}
+.pd-h2.center::after{margin-inline:auto}
+.pd-steps{display:grid;gap:30px;grid-template-columns:1fr}
+@media(min-width:640px){.pd-steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.pd-steps{grid-template-columns:repeat(4,1fr)}}
+.pd-step{position:relative;background:var(--x-surf);border:1px solid var(--x-line);border-radius:26px;padding:24px 26px 28px;box-shadow:0 22px 44px -30px rgba(120,70,40,.35)}
+.pd-step-top{display:flex;justify-content:space-between;align-items:flex-start;min-height:84px}
+.pd-num{width:38px;height:38px;border-radius:50%;background:var(--o);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.pd-ico{width:84px;height:84px;object-fit:contain;mix-blend-mode:multiply}
+@media(min-width:1024px){
+ .pd-step:not(:last-child)::after{content:"";position:absolute;top:50%;inset-inline-end:-20px;width:10px;height:10px;margin-top:-5px;border-left:3px solid var(--o);border-bottom:3px solid var(--o);transform:rotate(45deg)}
+ html[dir="ltr"] .pd-step:not(:last-child)::after{transform:rotate(-135deg)}
+}
+.pd-chal{display:grid;gap:32px;align-items:center}
+@media(min-width:1024px){.pd-chal{grid-template-columns:1fr 330px}}
+.pd-robot{width:100%;max-width:300px;margin-inline:auto;mix-blend-mode:multiply}
+@media(max-width:1023px){.pd-robot{max-width:200px}}
+.pd-row{background:var(--x-surf);border:1px solid var(--x-line);border-radius:22px;padding:14px;display:grid;gap:14px;box-shadow:0 18px 40px -30px rgba(120,70,40,.3)}
+@media(min-width:768px){.pd-row{grid-template-columns:1fr 1fr;align-items:center}}
+.pd-prob{display:flex;align-items:center;gap:14px;padding:6px 8px}
+.pd-badge{display:inline-flex;flex:none;align-items:center;gap:8px;white-space:nowrap;background:#fdeceb;color:#e8462f;font-weight:800;font-size:13px;padding:12px 18px;border-radius:999px}
+.pd-sol{display:flex;align-items:flex-start;gap:12px;background:#e7f7ee;border-radius:18px;padding:16px 18px}
+.pd-sol small{display:block;color:#1f9d55;font-weight:800;font-size:11px;margin-bottom:2px}
+.pd-sol svg{flex:none}
+.pd-res{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(100deg,#1b2a47 0%,#24304a 60%,#2b3350 100%);color:#fff;min-height:170px;display:flex;align-items:center;padding:28px 40px}
+.pd-res-art{position:absolute;inset-block:0;inset-inline-start:0;height:100%;width:56%;object-fit:cover;object-position:right center;-webkit-mask-image:linear-gradient(to left,#000 65%,transparent);mask-image:linear-gradient(to left,#000 65%,transparent)}
+html[dir="ltr"] .pd-res-art{object-position:left center;-webkit-mask-image:linear-gradient(to right,#000 65%,transparent);mask-image:linear-gradient(to right,#000 65%,transparent)}
+.pd-res-txt{position:relative;z-index:1;margin-inline-start:auto;max-width:46%}
+.pd-res-head{display:flex;align-items:center;gap:16px}
+.pd-res-head .ln{width:48px;height:3px;border-radius:3px;background:var(--o)}
+.pd-res .pd-h2{color:#fff;font-size:clamp(24px,3vw,34px)}
+.pd-res .pd-h2::after{width:44px}
+@media(max-width:767px){.pd-res{padding:24px}.pd-res-txt{max-width:100%}.pd-res-art{opacity:.25;width:100%}}
+html[data-theme="dark"] .pd-ico,html[data-theme="dark"] .pd-robot{mix-blend-mode:normal;background:#fff3e8;border-radius:22px;padding:4px}
+html[data-theme="dark"] .pd-robot{border-radius:36px}
+html[data-theme="dark"] .pd-step,html[data-theme="dark"] .pd-row{box-shadow:none}
+html[data-theme="dark"] .pd-badge{background:color-mix(in srgb,#e8462f 16%,transparent)}
+html[data-theme="dark"] .pd-sol{background:color-mix(in srgb,#1f9d55 16%,transparent)}
+</style>
 </head>
 <body class="min-h-screen">
 
@@ -47,6 +92,9 @@ var T={
   role:['دورنا','Our role'],
   dur:['المدة','Duration'],
   stack:['التقنيات','Tech stack'],
+  eb1:['كيف','How'],
+  eb2:['نعمل؟','we work'],
+  procSub:['بنمشي معاك في كل خطوة من الفكرة لحد ما الموقع يبقى جاهز ويحقق هدفك.','We walk with you every step, from the idea until the site is ready and meets your goal.'],
   proc:['إزاي اشتغلنا عليه','How we built it'],
   chal:['المشاكل اللي قابلتنا وإزاي حليناها','Challenges & how we solved them'],
   prob:['المشكلة','Problem'],
@@ -160,37 +208,43 @@ function render(){
   document.title='UXCode | '+p.title;
 
   var visit='<a href="'+p.url+'" target="_blank" rel="noopener noreferrer" class="btn btn-o">'+T.visit[i]+' '+ICON+'</a>';
-  var box='bg-[color:var(--x-surf)] border border-[color:var(--x-line)] rounded-2xl';
+  var W='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.01"/></svg>';
+  var OK='<svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#22b35a"/><path d="M9.5 16.5l4.3 4.3L22.5 12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var TG='<svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#ff7a1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.5"/><circle cx="11" cy="13" r="1.2" fill="#ff7a1a"/><path d="M12 12l8-8M16 4h4v4"/></svg>';
 
-  var meta=[[T.type[i],CATS[p.cat]?CATS[p.cat][i]:''],[T.role[i],L(p.role)],[T.dur[i],L(p.dur)],[T.stack[i],(p.stack||[]).join(' • ')]]
-    .filter(function(m){return m[1];})
-    .map(function(m){return '<div class="'+box+' p-5"><p class="text-xs text-[color:var(--mute)]">'+m[0]+'</p><p class="font-bold mt-1 text-[color:var(--x-ink)]">'+m[1]+'</p></div>';}).join('');
+  var pills=[[CATS[p.cat]?CATS[p.cat][i]:'',1],[L(p.role),0],[L(p.dur),0],[(p.stack||[]).join(' • '),0]]
+    .filter(function(m){return m[0];})
+    .map(function(m){return '<span class="pd-pill'+(m[1]?' fill':'')+'">'+m[0]+' '+ICON+'</span>';}).join('');
 
   var steps=(p.proc||PROC).map(function(s,n){
-    return '<div class="'+box+' p-6"><span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">0'+(n+1)+'</span><h3 class="font-black text-lg mt-3 text-[color:var(--x-ink)]">'+L(s.t)+'</h3><p class="text-sm text-[color:var(--mute)] leading-7 mt-2">'+L(s.d)+'</p></div>';
+    var ic=n<4?'<img class="pd-ico" src="images/step-'+(n+1)+'.png" alt="" loading="lazy">':'';
+    return '<div class="pd-step"><div class="pd-step-top"><span class="pd-num">0'+(n+1)+'</span>'+ic+'</div><h3 class="font-black text-lg mt-5 text-[color:var(--x-ink)]">'+L(s.t)+'</h3><p class="text-sm text-[color:var(--mute)] leading-7 mt-2">'+L(s.d)+'</p></div>';
   }).join('');
 
   var chal=(p.challenges||[]).map(function(c){
-    return '<div class="'+box+' p-6 grid md:grid-cols-2 gap-6"><div><p class="txt-o text-xs font-bold">'+T.prob[i]+'</p><p class="mt-2 text-sm leading-8 text-[color:var(--x-ink)]">'+L(c.p)+'</p></div><div><p class="txt-o text-xs font-bold">'+T.sol[i]+'</p><p class="mt-2 text-sm leading-8 text-[color:var(--x-ink)]">'+L(c.s)+'</p></div></div>';
+    return '<div class="pd-row"><div class="pd-prob"><span class="pd-badge">'+W+T.prob[i]+'</span><p class="text-sm leading-7 text-[color:var(--x-ink)]">'+L(c.p)+'</p></div><div class="pd-sol">'+OK+'<div><small>'+T.sol[i]+'</small><p class="text-sm leading-7 text-[color:var(--x-ink)]">'+L(c.s)+'</p></div></div></div>';
   }).join('');
 
   var tags=(p.tags||[]).map(function(t){return '<span class="rv-tag">'+t+'</span>';}).join('');
 
   app.innerHTML=
    '<section class="grid md:grid-cols-2 gap-10 items-center">'+
-     '<div><span class="inline-block rounded-full bg-[color:var(--x-soft)] txt-o text-xs font-semibold px-4 py-1.5">'+(CATS[p.cat]?CATS[p.cat][i]:'')+'</span>'+
-     '<h1 class="text-4xl md:text-6xl font-black text-[color:var(--x-ink)] mt-4">'+p.title+'</h1>'+
+     '<div><h1 class="text-4xl md:text-6xl font-black text-[color:var(--x-ink)]">'+p.title+'</h1>'+
      '<p class="text-sm text-[color:var(--mute)] leading-8 mt-4">'+L(p.intro)+'</p>'+
      '<div class="flex flex-wrap gap-2 mt-4">'+tags+'</div>'+
      '<div class="mt-6">'+visit+'</div></div>'+
      '<img src="'+encodeURI(p.img)+'" alt="'+p.title+'" class="w-full h-64 md:h-96 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]">'+
    '</section>'+
-   (meta?'<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">'+meta+'</section>':'')+
-   '<section class="mt-16"><h2 class="text-2xl md:text-4xl font-black text-[color:var(--x-ink)]">'+T.proc[i]+'</h2><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">'+steps+'</div></section>'+
-   '<section class="mt-16"><h2 class="text-2xl md:text-4xl font-black text-[color:var(--x-ink)]">'+T.chal[i]+'</h2><div class="flex flex-col gap-4 mt-6">'+chal+'</div></section>'+
-   (p.result?'<section class="mt-16"><h2 class="text-2xl md:text-4xl font-black text-[color:var(--x-ink)]">'+T.res[i]+'</h2><p class="text-sm text-[color:var(--mute)] leading-8 mt-4 max-w-2xl">'+L(p.result)+'</p></section>':'')+
-   '<section class="mt-16 card bg-[color:var(--x-tint)] p-8 md:p-10 text-center"><h2 class="text-2xl md:text-3xl font-black text-[color:var(--x-ink)]">'+p.title+'</h2>'+
-     '<div class="flex flex-wrap justify-center gap-3 mt-6">'+visit+'<a href="https://wa.me/201027432486" class="btn btn-w">'+T.ctaB[i]+'</a></div></section>';
+   (pills?'<div class="flex flex-wrap gap-3 mt-12">'+pills+'</div>':'')+
+   '<section class="mt-14"><p class="pd-eyebrow"><span>'+T.eb1[i]+' <span class="txt-o">'+T.eb2[i]+'</span></span></p>'+
+     '<h2 class="pd-h2 mt-4" style="font-size:clamp(32px,5vw,54px)">'+T.proc[i]+'</h2>'+
+     '<p class="text-sm text-[color:var(--mute)] leading-8 mt-3">'+T.procSub[i]+'</p>'+
+     '<div class="pd-steps mt-10">'+steps+'</div></section>'+
+   '<section class="mt-16 pd-chal"><div><h2 class="pd-h2">'+T.chal[i]+'</h2><div class="flex flex-col gap-4 mt-8">'+chal+'</div></div>'+
+     '<img class="pd-robot" src="images/robot.png" alt="" loading="lazy"></section>'+
+   (p.result?'<section class="mt-16 pd-res"><img class="pd-res-art" src="images/result-art.png" alt="" loading="lazy"><div class="pd-res-txt"><div class="pd-res-head"><span class="ln"></span><h2 class="pd-h2">'+T.res[i]+'</h2>'+TG+'</div><p class="text-sm leading-8 mt-4" style="color:rgba(255,255,255,.88)">'+L(p.result)+'</p></div></section>':'')+
+   '<section class="mt-14 card bg-[color:var(--x-tint)] p-8 md:p-10 text-center"><h2 class="pd-h2 center" style="font-size:clamp(24px,3vw,34px)">'+p.title+'</h2>'+
+     '<div class="flex flex-wrap justify-center gap-3 mt-8">'+visit+'<a href="https://wa.me/201027432486" class="btn btn-w">'+T.ctaB[i]+'</a></div></section>';
 }
 
 /* ====== اللغة والثيم (نفس مفاتيح الصفحة الرئيسية) ====== */
