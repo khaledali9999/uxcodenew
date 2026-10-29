@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fffaf6">
+<title>UXCode | Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme.css">
+<script>
+(function(){try{
+  var d=document.documentElement;
+  var t=localStorage.getItem('ux-theme')||'light', l=localStorage.getItem('ux-lang')||'ar';
+  d.setAttribute('data-theme',t); d.lang=l; d.dir=(l==='ar'?'rtl':'ltr');
+}catch(e){}})();
+</script>
+</head>
+<body class="min-h-screen">
+
+<header class="sticky top-0 z-50 site-hdr backdrop-blur">
+<nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+  <a href="index.html" class="text-2xl font-extrabold"><span class="txt-o">UX</span>Code</a>
+  <div class="flex items-center gap-2">
+    <a href="index.html#works" id="backBtn" class="btn btn-w"></a>
+    <button id="langBtn" type="button" class="ctl ctl-lang" aria-label="Change language"><span id="langLbl">EN</span></button>
+    <button id="themeBtn" type="button" class="ctl" aria-label="Toggle theme">
+      <svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="ico-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</nav>
+</header>
+
+<main id="app" class="max-w-6xl mx-auto px-4 py-12"></main>
+
+<footer class="max-w-6xl mx-auto px-4 py-8 text-center text-xs text-[color:var(--mute)]"><p id="rights"></p></footer>
+
+<script>
+(function(){
+var root=document.documentElement;
+
+/* ====== نصوص الواجهة [عربي, English] ====== */
+var T={
+  back:['العودة للأعمال','Back to work'],
+  type:['نوع المشروع','Project type'],
+  role:['دورنا','Our role'],
+  dur:['المدة','Duration'],
+  stack:['التقنيات','Tech stack'],
+  proc:['إزاي اشتغلنا عليه','How we built it'],
+  chal:['المشاكل اللي قابلتنا وإزاي حليناها','Challenges & how we solved them'],
+  prob:['المشكلة','Problem'],
+  sol:['الحل','Solution'],
+  res:['النتيجة','Result'],
+  visit:['عرض الموقع','Visit website'],
+  ctaB:['كلمنا','Talk to us'],
+  nf:['المشروع مش موجود.','Project not found.'],
+  rights:['© 2025 UXCode. جميع الحقوق محفوظة','© 2025 UXCode. All rights reserved.']
+};
+var CATS={
+  corp:['موقع شركة','Corporate website'],
+  shop:['متجر إلكتروني','E-commerce'],
+  edu:['منصة تعليمية','Educational platform'],
+  tour:['موقع سياحي','Tourism website'],
+  port:['Portfolio','Portfolio']
+};
+
+/* ====== خطوات الشغل الافتراضية (ينفع تتغير لكل مشروع بـ proc) ====== */
+var PROC=[
+ {t:{ar:'فهم المتطلبات',en:'Discovery'},d:{ar:'جلسة استكشاف لفهم الأهداف والعملاء وتحديد نطاق المشروع.',en:'A discovery session to understand goals, customers and project scope.'}},
+ {t:{ar:'تصميم الواجهات',en:'UI/UX design'},d:{ar:'رسم الهيكل والواجهات على فيجما وعرضها للمراجعة قبل البرمجة.',en:'Mapping structure and interfaces in Figma and reviewing them before coding.'}},
+ {t:{ar:'التطوير والبرمجة',en:'Development'},d:{ar:'تنفيذ التصميم بكود نظيف ومتجاوب مع كل الشاشات.',en:'Building the design with clean, fully responsive code.'}},
+ {t:{ar:'الاختبار والإطلاق',en:'Testing & launch'},d:{ar:'اختبار شامل وتصليح الملاحظات، وبعدها الإطلاق والمتابعة.',en:'Full testing, fixing feedback, then launch and follow-up.'}}
+];
+
+/* ====== بيانات المشاريع — عدّل النصوص بالحقيقي ======
+   أي حقل ينفع يبقى نص عربي بس، أو {ar:'',en:''} لو عايز إنجليزي.
+   role / dur / stack لو فاضيين الكارت بتاعهم بيختفي. */
+var P={
+ 'speak-smart':{
+  title:'Speak Smart AI', cat:'edu', url:'https://speak-ai-eight.vercel.app/',
+  img:'images/WhatsApp Image 2026-06-29 at 14.49.56.jpeg',
+  tags:['Mobile App','AI','UI/UX'],
+  intro:'منصة ذكية لتطوير مهارات التحدث باللغة الإنجليزية باستخدام الذكاء الاصطناعي.',
+  role:'تصميم وتطوير كامل', dur:'', stack:[],
+  challenges:[
+   {p:'سرعة رد الذكاء الاصطناعي أثناء المحادثة.',s:'قللنا حجم الطلبات وحسّنا طريقة عرض الرد عشان التجربة تبان فورية.'},
+   {p:'واجهة بسيطة تناسب المبتدئين.',s:'صممنا مسار استخدام قصير بخطوات واضحة وتصميم مريح للموبايل.'}
+  ],
+  result:'تجربة تعلّم سلسة بتخلي المستخدم يتدرب على الكلام في أي وقت.'
+ },
+ 'power-pro':{
+  title:'Power Pro', cat:'corp', url:'https://power-pro-eight.vercel.app/',
+  img:'images/Power Pro Website Device Mockup.png',
+  tags:['Corporate','UI/UX'],
+  intro:'ويب سايت لشركة باور برو تكنولوجي إلكتريك المتخصصة في تصنيع لوحات الكهرباء ذات الجهد المنخفض، بيعرض خدماتها ومنتجاتها بتصميم احترافي يعكس الجودة والاعتمادية.',
+  role:'تصميم وتطوير كامل', dur:'', stack:[],
+  challenges:[
+   {p:'إظهار هوية شركة صناعية بشكل احترافي من غير تعقيد.',s:'اعتمدنا تصميم نظيف بمساحات واضحة وألوان تعكس الثقة والاعتمادية.'},
+   {p:'شرح منتجات فنية لعملاء مش متخصصين.',s:'قسمنا المحتوى لأقسام قصيرة مع صور وتوصيف مبسط لكل منتج.'}
+  ],
+  result:'موقع سريع ومتجاوب بيعكس هوية الشركة وبيسهّل على العملاء التعرف على منتجاتها والتواصل معها.'
+ },
+ 'tajan-travel':{
+  title:'Tajan Travel', cat:'tour', url:'https://tajan.runasp.net/',
+  img:'images/WhatsApp Image 2026-09-30 at 00.01.27.jpeg',
+  tags:['Website','Tourism','UI/UX'],
+  intro:'موقع سياحي لحجز الرحلات والجولات السياحية في مصر، بتصميم عصري وتجربة استخدام سلسة.',
+  role:'تصميم وتطوير كامل', dur:'', stack:['ASP.NET Core MVC'],
+  challenges:[
+   {p:'عرض الرحلات والجولات بشكل جذاب وسهل الاختيار.',s:'كروت واضحة بصور كبيرة وتفاصيل مختصرة وزرار حجز ظاهر في كل صفحة.'},
+   {p:'مخاطبة السائح الأجنبي بتجربة مريحة وواضحة.',s:'ركزنا على تصميم بسيط ومحتوى مباشر وخطوات حجز قصيرة.'}
+  ],
+  result:'موقع سياحي احترافي بيسهّل على الزائر استكشاف الرحلات وإرسال طلب الحجز.'
+ },
+ 'tamakan':{
+  title:'Tamakan', cat:'edu', url:'https://tamakan.runasp.net/',
+  img:'images/WhatsApp Image 2026-09-30 at 00.17.44.jpeg',
+  tags:['Website','Subscriptions'],
+  intro:'منصة تعليمية متكاملة مع نظام اشتراكات وتقييمات للطلاب.',
+  role:'تصميم وتطوير كامل', dur:'', stack:[],
+  challenges:[
+   {p:'إدارة الاشتراكات وصلاحيات وصول الطلاب للمحتوى.',s:'بنينا نظام صلاحيات واضح يربط كل اشتراك بالمحتوى المتاح له.'},
+   {p:'تقييم الطلاب بطريقة سهلة للطالب والمُدرّس.',s:'صممنا واجهة تقييم بسيطة مع عرض النتائج بشكل منظم.'}
+  ],
+  result:'منصة منظمة بتدير الطلاب والاشتراكات والتقييمات في مكان واحد.'
+ },
+ 'hostore':{
+  title:'Hostore', cat:'shop', url:'https://hostore2.com/',
+  img:'images/WhatsApp Image 2026-09-30 at 00.00.32.jpeg',
+  tags:['Website','Recharge','E-Payment'],
+  intro:'منصة لشحن الماسات والعملات داخل تطبيقات البث المباشر مثل بارتي ستار، بطريقة سريعة وآمنة وبأسعار مناسبة.',
+  role:'تصميم وتطوير كامل', dur:'', stack:[],
+  challenges:[
+   {p:'تأمين عمليات الدفع وتقليل أخطاء الشحن.',s:'ربطنا الدفع بخطوات تأكيد واضحة قبل تنفيذ أي طلب.'},
+   {p:'سرعة إتمام الطلب للمستخدم.',s:'اختصرنا رحلة الشراء في خطوات قليلة وبسيطة.'}
+  ],
+  result:'متجر شحن سريع وواضح بيخلي العميل يكمل طلبه في دقايق.'
+ }
+};
+
+/* ====== الرندر ====== */
+function lg(){return root.lang==='en'?1:0;}
+function L(v){
+  if(v==null) return '';
+  if(typeof v==='string') return v;
+  return v[root.lang==='en'?'en':'ar']||v.ar||'';
+}
+var ICON='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+function render(){
+  var i=lg();
+  var id=new URLSearchParams(location.search).get('p');
+  var p=P[id], app=document.getElementById('app');
+  document.getElementById('backBtn').textContent=T.back[i];
+  document.getElementById('rights').textContent=T.rights[i];
+  document.getElementById('langLbl').textContent=i?'عربي':'EN';
+
+  if(!p){ app.innerHTML='<p class="text-center text-[color:var(--mute)]">'+T.nf[i]+'</p>'; return; }
+  document.title='UXCode | '+p.title;
+
+  var visit='<a href="'+p.url+'" target="_blank" rel="noopener noreferrer" class="btn btn-o">'+T.visit[i]+' '+ICON+'</a>';
+  var box='bg-[color:var(--x-surf)] border border-[color:var(--x-line)] rounded-2xl';
+
+  var meta=[[T.type[i],CATS[p.cat]?CATS[p.cat][i]:''],[T.role[i],L(p.role)],[T.dur[i],L(p.dur)],[T.stack[i],(p.stack||[]).join(' • ')]]
+    .filter(function(m){return m[1];})
+    .map(function(m){return '<div class="'+box+' p-5"><p class="text-xs text-[color:var(--mute)]">'+m[0]+'</p><p class="font-bold mt-1 text-[color:var(--x-ink)]">'+m[1]+'</p></div>';}).join('');
+
+  var steps=(p.proc||PROC).map(function(s,n){
+    return '<div class="'+box+' p-6"><span class="inline-flex bg-[color:var(--o)] text-white text-xs font-bold rounded-full px-3 py-1">0'+(n+1)+'</span><h3 class="font-black text-lg mt-3 text-[color:var(--x-ink)]">'+L(s.t)+'</h3><p class="text-sm text-[color:var(--mute)] leading-7 mt-2">'+L(s.d)+'</p></div>';
+  }).join('');
+
+  var chal=(p.challenges||[]).map(function(c){
+    return '<div class="'+box+' p-6 grid md:grid-cols-2 gap-6"><div><p class="txt-o text-xs font-bold">'+T.prob[i]+'</p><p class="mt-2 text-sm leading-8 text-[color:var(--x-ink)]">'+L(c.p)+'</p></div><div><p class="txt-o text-xs font-bold">'+T.sol[i]+'</p><p class="mt-2 text-sm leading-8 text-[color:var(--x-ink)]">'+L(c.s)+'</p></div></div>';
+  }).join('');
+
+  var tags=(p.tags||[]).map(function(t){return '<span class="rv-tag">'+t+'</span>';}).join('');
+
+  app.innerHTML=
+   '<section class="grid md:grid-cols-2 gap-10 items-center">'+
+     '<div><span class="inline-block rounded-full bg-[color:var(--x-soft)] txt-o text-xs font-semibold px-4 py-1.5">'+(CATS[p.cat]?CATS[p.cat][i]:'')+'</span>'+
+     '<h1 class="text-4xl md:text-6xl font-black text-[color:var(--x-ink)] mt-4">'+p.title+'</h1>'+
+     '<p class="text-sm text-[color:var(--mute)] leading-8 mt-4">'+L(p.intro)+'</p>'+
+     '<div class="flex flex-wrap gap-2 mt-4">'+tags+'</div>'+
+     '<div class="mt-6">'+visit+'</div></div>'+
+     '<img src="'+encodeURI(p.img)+'" alt="'+p.title+'" class="w-full h-64 md:h-96 object-cover rounded-2xl bg-[color:var(--x-ph)] shadow-[0_25px_50px_-25px_rgba(120,70,40,.4)]">'+
+   '</section>'+
+   (meta?'<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">'+meta+'</section>':'')+
+   '<section class="mt-16"><h2 class="text-2xl md:text-4xl font-black text-[color:var(--x-ink)]">'+T.proc[i]+'</h2><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">'+steps+'</div></section>'+
+   '<section class="mt-16"><h2 class="text-2xl md:text-4xl font-black text-[color:var(--x-ink)]">'+T.chal[i]+'</h2><div class="flex flex-col gap-4 mt-6">'+chal+'</div></section>'+
+   (p.result?'<section class="mt-16"><h2 class="text-2xl md:text-4xl font-black text-[color:var(--x-ink)]">'+T.res[i]+'</h2><p class="text-sm text-[color:var(--mute)] leading-8 mt-4 max-w-2xl">'+L(p.result)+'</p></section>':'')+
+   '<section class="mt-16 card bg-[color:var(--x-tint)] p-8 md:p-10 text-center"><h2 class="text-2xl md:text-3xl font-black text-[color:var(--x-ink)]">'+p.title+'</h2>'+
+     '<div class="flex flex-wrap justify-center gap-3 mt-6">'+visit+'<a href="https://wa.me/201027432486" class="btn btn-w">'+T.ctaB[i]+'</a></div></section>';
+}
+
+/* ====== اللغة والثيم (نفس مفاتيح الصفحة الرئيسية) ====== */
+document.getElementById('langBtn').addEventListener('click',function(){
+  var l=root.lang==='ar'?'en':'ar';
+  root.lang=l; root.dir=(l==='ar'?'rtl':'ltr');
+  try{localStorage.setItem('ux-lang',l);}catch(e){}
+  render();
+});
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var t=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  root.setAttribute('data-theme',t);
+  var m=document.querySelector('meta[name="theme-color"]');
+  if(m) m.content=(t==='dark'?'#16100c':'#fffaf6');
+  try{localStorage.setItem('ux-theme',t);}catch(e){}
+});
+render();
+})();
+</script>
+</body></html>
