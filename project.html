@@ -215,13 +215,16 @@ html.is-loading{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   #loader *{animation:none !important}
 }
-
+.pd-back{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:9px 18px;border-radius:999px;border:1.5px solid var(--x-line);background:var(--x-surf);color:var(--x-ink);font-weight:800;font-size:13px;transition:border-color .2s,color .2s}
+.pd-back:hover{border-color:var(--o);color:var(--o)}
+html[dir="ltr"] .pd-back svg{transform:scaleX(-1)}
+@media(max-width:480px){.pd-back{padding:9px 12px}.pd-back span{display:none}}
 </style>
 <header class="sticky top-0 z-50 site-hdr backdrop-blur">
 <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
   <a href="index.html" class="text-2xl font-extrabold"><span class="txt-o">UX</span>Code</a>
   <div class="flex items-center gap-2">
-    <a href="index.html#works" id="backBtn" class="btn btn-w"></a>
+    <a href="index.html#works" id="backBtn" class="pd-back"></a>
     <button id="langBtn" type="button" class="ctl ctl-lang" aria-label="Change language"><span id="langLbl">EN</span></button>
     <button id="themeBtn" type="button" class="ctl" aria-label="Toggle theme">
       <svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -354,7 +357,9 @@ function render(){
   var i=lg();
   var id=new URLSearchParams(location.search).get('p');
   var p=P[id], app=document.getElementById('app');
-  document.getElementById('backBtn').textContent=T.back[i];
+var bb=document.getElementById('backBtn');
+bb.setAttribute('aria-label',T.back[i]);
+bb.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>'+T.back[i]+'</span>';
   document.getElementById('rights').textContent=T.rights[i];
   document.getElementById('langLbl').textContent=i?'عربي':'EN';
 
