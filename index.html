@@ -42,7 +42,7 @@
 <li><a href="#works" data-i18n="nav.works">أعمالي</a></li>
 <li><a href="#services" data-i18n="nav.services">خدماتي</a></li>
 <li><a href="#about" data-i18n="nav.about">من نحن</a></li>
-<li><a href="https://wa.me/201027432486" data-i18n="nav.contact">تواصل معي</a></li>
+<li><a href="#contact" data-i18n="nav.contact">تواصل معي</a></li>
 </ul>
 
 <div class="flex items-center gap-2">
@@ -64,7 +64,7 @@
   <a href="#works" data-i18n="nav.works">أعمالي</a>
   <a href="#services" data-i18n="nav.services">خدماتي</a>
   <a href="#about" data-i18n="nav.about">من نحن</a>
-  <a href="https://wa.me/201027432486" data-i18n="nav.contact">تواصل معي</a>
+  <a href="#contact" data-i18n="nav.contact">تواصل معي</a>
 </div>
 </header>
 
@@ -522,13 +522,37 @@ html.is-loading{overflow:hidden}
 <p class="cta2-top" data-i18n="cta.top">عندك فكرة؟</p>
 <h2 class="cta2-h"><span data-i18n="cta.h1">خلينا</span> <span class="cta2-u txt-o"><span data-i18n="cta.h2">نبنيها.</span><svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 13 C 35 5, 62 17, 100 9 S 165 5, 197 11" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h2>
 <p class="cta2-sub" data-i18n="cta.sub">احكيلنا عن مشروعك، وإحنا نحول الفكرة إلى تجربة رقمية متكاملة.</p>
-<div class="cta2-btns"><a href="https://wa.me/201027432486" class="btn btn-o"><span data-i18n="cta.b1">ابدأ مشروعك</span> <span data-i="arrow" class="w-4 h-4"></span></a><a href="https://wa.me/201027432486" class="btn btn-w" data-i18n="cta.b2">تحدث معنا</a></div>
+<div class="cta2-btns"><a href="#contact" class="btn btn-o"><span data-i18n="cta.b1">ابدأ مشروعك</span> <span data-i="arrow" class="w-4 h-4"></span></a><a href="https://wa.me/201027432486" class="btn btn-w" data-i18n="cta.b2">تحدث معنا</a></div>
+</div></section>
+
+
+<!-- Contact form (WhatsApp) -->
+<style>
+.ctf-fld{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--x-line);background:var(--x-surf);color:var(--x-ink);font:inherit}
+.ctf-fld:focus{outline:2px solid var(--o);outline-offset:2px}.ctf-fld.bad{border-color:#e8462f}
+.ctf-err{color:#e8462f;font-size:12px;min-height:16px}
+</style>
+<section id="contact" class="max-w-6xl mx-auto px-4 pb-16">
+<div class="card bg-[color:var(--x-tint)] p-6 md:p-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<div>
+<span class="inline-block rounded-full bg-[color:var(--x-soft)] txt-o text-xs font-semibold px-4 py-1.5" data-i18n="ct.badge">تواصل معنا</span>
+<h2 class="text-3xl md:text-4xl font-black text-[color:var(--x-ink)] mt-4 leading-snug" data-i18n="ct.title">احكيلنا عن فكرتك</h2>
+<p class="text-sm text-[color:var(--mute)] leading-8 mt-4" data-i18n="ct.sub">املا البيانات واضغط إرسال، هيفتح واتساب برسالة جاهزة وهنرد عليك في أسرع وقت.</p>
+</div>
+<form id="ctForm" class="grid gap-3" novalidate>
+<input id="ctName" class="ctf-fld" required autocomplete="name" data-ph="ct.name" aria-label="Name">
+<input id="ctTel" type="tel" class="ctf-fld" dir="ltr" autocomplete="tel" data-ph="ct.phone" aria-label="Phone">
+<select id="ctSvc" class="ctf-fld" aria-label="Service"><option data-i18n="svc.1t">متاجر إلكترونية</option><option data-i18n="svc.2t">تطوير المواقع الشخصية</option><option data-i18n="svc.3t">تصميم UI/UX</option><option data-i18n="svc.4t">مواقع الشركات</option><option data-i18n="svc.5t">منصات تعليمية</option><option data-i18n="svc.6t">استشارات رقمية</option></select>
+<textarea id="ctMsg" rows="4" class="ctf-fld" required data-ph="ct.msg" aria-label="Message"></textarea>
+<p id="ctErr" class="ctf-err" role="alert"></p>
+<button class="btn btn-o justify-center" type="submit"><span data-i18n="ct.send">إرسال عبر واتساب</span></button>
+</form>
 </div></section>
 
 <!-- Footer -->
 <footer class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[color:var(--mute)]">
 <div><a href="#" class="text-2xl font-extrabold text-[color:var(--ink)]"><span class="txt-o">UX</span>Code</a><p data-i18n="foot.tag">تصميم يلهم المستخدم، كود يبني المستقبل</p></div>
-<ul class="flex gap-6 text-[color:var(--ink)]"><li><a href="#home" class="txt-o" data-i18n="nav.home">الرئيسية</a></li><li><a href="#works" data-i18n="nav.works">أعمالي</a></li><li><a href="#services" data-i18n="nav.services">خدماتي</a></li><li><a href="#about" data-i18n="nav.about">من نحن</a></li><li><a href="https://wa.me/201027432486" data-i18n="nav.contact">تواصل معي</a></li></ul>
+<ul class="flex gap-6 text-[color:var(--ink)]"><li><a href="#home" class="txt-o" data-i18n="nav.home">الرئيسية</a></li><li><a href="#works" data-i18n="nav.works">أعمالي</a></li><li><a href="#services" data-i18n="nav.services">خدماتي</a></li><li><a href="#about" data-i18n="nav.about">من نحن</a></li><li><a href="#contact" data-i18n="nav.contact">تواصل معي</a></li></ul>
 <p data-i18n="foot.rights">© 2025 UXCode. جميع الحقوق محفوظة</p>
 </footer>
 <script src="script.js"></script>
@@ -671,6 +695,17 @@ html.is-loading{overflow:hidden}
     'cta.h1': ['خلينا', 'Let’s'],
     'cta.h2': ['نبنيها.', 'build it.'],
     'cta.sub': ['احكيلنا عن مشروعك، وإحنا نحول الفكرة إلى تجربة رقمية متكاملة.', 'Tell us about your project and we’ll turn the idea into a complete digital experience.'],
+    'ct.badge': ['تواصل معنا', 'Contact us'],
+    'ct.title': ['احكيلنا عن فكرتك', 'Tell us about your idea'],
+    'ct.sub': ['املا البيانات واضغط إرسال، هيفتح واتساب برسالة جاهزة وهنرد عليك في أسرع وقت.', 'Fill in the form and hit send: WhatsApp opens with a ready message and we reply as soon as possible.'],
+    'ct.name': ['اسمك', 'Your name'],
+    'ct.phone': ['رقم الهاتف (اختياري)', 'Phone (optional)'],
+    'ct.msg': ['تفاصيل مشروعك', 'Your project details'],
+    'ct.send': ['إرسال عبر واتساب', 'Send via WhatsApp'],
+    'ct.err': ['من فضلك اكتب اسمك وتفاصيل مشروعك', 'Please enter your name and project details'],
+    'ct.hi': ['أهلاً UXCode، أنا', 'Hi UXCode, I am'],
+    'ct.svc': ['الخدمة المطلوبة', 'Service'],
+    'ct.tel': ['رقمي', 'My phone'],
     'cta.b1': ['ابدأ مشروعك', 'Start your project'],
     'cta.b2': ['تحدث معنا', 'Talk to us'],
 
@@ -748,6 +783,24 @@ html.is-loading{overflow:hidden}
   if (document.readyState === 'complete') done();
   else window.addEventListener('load', done);
   setTimeout(done, 6000); // احتياطي لو في صورة اتأخرت
+})();
+</script>
+<script>
+(function(){
+  var WA='201027432486',L=function(){return document.documentElement.lang==='en'?1:0},t=function(k){return UX.T[k][L()]};
+  function ph(){document.querySelectorAll('[data-ph]').forEach(function(e){e.placeholder=t(e.dataset.ph)})}
+  ph();document.addEventListener('langchange',ph);
+  var f=document.getElementById('ctForm'),err=document.getElementById('ctErr');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('ctName'),m=document.getElementById('ctMsg'),ok=true;
+    [n,m].forEach(function(x){var bad=!x.value.trim();x.classList.toggle('bad',bad);if(bad)ok=false});
+    err.textContent=ok?'':t('ct.err');if(!ok)return;
+    var tel=document.getElementById('ctTel').value.trim();
+    var msg=t('ct.hi')+' '+n.value.trim()+'\n'+t('ct.svc')+': '+document.getElementById('ctSvc').value+(tel?'\n'+t('ct.tel')+': '+tel:'')+'\n\n'+m.value.trim();
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+    f.reset();
+  });
 })();
 </script>
 </body></html>
