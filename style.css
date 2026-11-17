@@ -1,6 +1,6 @@
 :root{--o:#E85D26;--o2:#E85D26;--bg:#fff8f3;--ink:#2b2b2b;--mute:#6f6f6f}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Kufi Arabic',sans-serif;background:linear-gradient(180deg,#fffaf6,#fff3ea 40%,#fffaf6);color:var(--ink)}
+body{font-family:'IBM Plex Sans Arabic',sans-serif;background:linear-gradient(180deg,#fffaf6,#fff3ea 40%,#fffaf6);color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;border-radius:9999px;font-weight:600;font-size:.875rem;transition:.2s}
 .btn-o{background:linear-gradient(90deg,var(--o),var(--o2));color:#fff;box-shadow:0 8px 20px -8px rgba(232,93,38,.6)}
 .btn-o:hover{transform:translateY(-2px)}
@@ -160,4 +160,3 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(120,70,40,.35)}
 .faq2-item[open] .faq2-ic{background:var(--o);border-color:var(--o)}
 .faq2-item[open] .faq2-chev{color:#fff;transform:rotate(-90deg)}
 .faq2-a{padding:0 1.3rem 1.2rem;font-size:12.5px;line-height:2;color:var(--mute)}
- 
