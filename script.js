@@ -36,6 +36,17 @@ const R=[
 {q:`فريق محترف بيفهم احتياجات العمل ويحوّل الأفكار لواقع. <b class="txt-o">الالتزام بالمواعيد</b> وجودة التنفيذ فاقت توقعاتي، وأنصح بالتعامل معهم بشدة.`,name:'سارة أحمد',role:'مؤسسة منصة تعليمية',avatar:'images/client-2.jpg',shot:'images/review-2.jpg',img:'images/project-5.jpg',badge:'EDU CASE STUDY',tags:['منصة تعليمية','UI/UX'],title:'منصة تعليمية متكاملة'},
 {q:`تعاملت معهم في أكثر من مشروع والنتيجة دايماً <b class="txt-o">ممتازة</b>. سرعة في التنفيذ وتواصل مستمر ودعم بعد التسليم.`,name:'أحمد محمد',role:'صاحب شركة',avatar:'images/client-3.jpg',shot:'images/review-3.jpg',img:'images/project-6.jpg',badge:'FOOD CASE STUDY',tags:['تطبيق جوال','طلبات'],title:'تطبيق طلب الطعام'},
 {q:`الموقع طلع <b class="txt-o">أحسن مما تخيلت</b>، تصميم عصري وأداء سريع، وزادت مبيعات المتجر من أول شهر.`,name:'محمد السيد',role:'صاحب متجر إكسسوارات',avatar:'images/client-4.jpg',shot:'images/review-4.jpg',img:'images/project-2.jpg',badge:'SHOP CASE STUDY',tags:['تجارة إلكترونية','موقع ويب'],title:'متجر إكسسوارات'}];
+// يجرب امتدادات مختلفة (jpg / jpeg / png / webp) لحد ما يلاقي الصورة
+function tryImg(path,ok){
+  const base=path.replace(/\.[a-z]+$/i,'');
+  const exts=['jpg','jpeg','png','webp','JPG','JPEG','PNG'];
+  let i=0;
+  (function next(){
+    if(i>=exts.length)return;
+    const u=base+'.'+exts[i++],im=new Image();
+    im.onload=()=>ok(u);im.onerror=next;im.src=u;
+  })();
+}
 const $=id=>document.getElementById(id),nums=$('rvNums');let cur=0,timer;
 R.forEach((_,i)=>{const b=document.createElement('button');b.className='rv-num';b.textContent=String(i+1).padStart(2,'0');b.onclick=()=>go(i);nums.append(b)});
 function go(n){
@@ -43,15 +54,13 @@ function go(n){
   if($('rvQuote'))$('rvQuote').innerHTML=r.q;
   const sh=$('rvShot');
   if(sh){
-    sh.onload=()=>{sh.classList.remove('hidden');$('rvQuote').classList.add('hidden')};
-    sh.onerror=()=>{sh.classList.add('hidden');$('rvQuote').classList.remove('hidden')};
     sh.classList.add('hidden');$('rvQuote').classList.remove('hidden');
-    sh.src=r.shot;
+    tryImg(r.shot,u=>{sh.src=u;sh.classList.remove('hidden');$('rvQuote').classList.add('hidden')});
   }
   if($('rvName'))$('rvName').textContent=r.name;
   if($('rvRole'))$('rvRole').textContent=r.role;
   if($('rvInit'))$('rvInit').textContent=r.name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join(' ');
-  if($('rvAvatar')){$('rvAvatar').style.display='none';$('rvAvatar').src=r.avatar}
+  if($('rvAvatar')){const av=$('rvAvatar');av.style.display='none';tryImg(r.avatar,u=>{av.src=u;av.style.display='block'})}
   if($('rvImg'))$('rvImg').src=r.img;
   if($('rvBadge'))$('rvBadge').textContent=r.badge;
   if($('rvTitle'))$('rvTitle').textContent=r.title;
