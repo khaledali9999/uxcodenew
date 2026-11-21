@@ -52,14 +52,13 @@ R.forEach((_,i)=>{const b=document.createElement('button');b.className='rv-num';
 function go(n){
   cur=(n+R.length)%R.length;const r=R[cur];
   if($('rvQuote'))$('rvQuote').innerHTML=r.q;
-  const sh=$('rvShot');
-  if(sh){
-    sh.classList.add('hidden');$('rvQuote').classList.remove('hidden');
-    tryImg(r.shot,u=>{sh.src=u;sh.classList.remove('hidden');$('rvQuote').classList.add('hidden')});
-  }
+  const sh=$('rvShot'),wrap=$('rvShotWrap');
+  const showText=()=>{wrap.classList.add('hidden');$('rvQuote').classList.remove('hidden');$('rvLabel').classList.add('hidden');$('rvStars').classList.add('hidden')};
+  showText();
+  tryImg(r.shot,u=>{if(R[cur]!==r)return;sh.src=u;wrap.classList.remove('hidden');$('rvQuote').classList.add('hidden');$('rvLabel').classList.remove('hidden');$('rvStars').classList.remove('hidden');$('rvStars').classList.add('flex')});
   if($('rvName'))$('rvName').textContent=r.name;
   if($('rvRole'))$('rvRole').textContent=r.role;
-  if($('rvInit'))$('rvInit').textContent=r.name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join(' ');
+  if($('rvInit'))$('rvInit').textContent=r.name.trim()[0];
   if($('rvAvatar')){const av=$('rvAvatar');av.style.display='none';tryImg(r.avatar,u=>{av.src=u;av.style.display='block'})}
   if($('rvImg'))$('rvImg').src=r.img;
   if($('rvBadge'))$('rvBadge').textContent=r.badge;
