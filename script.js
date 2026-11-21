@@ -37,14 +37,16 @@ const R=[
 {q:`تعاملت معهم في أكثر من مشروع والنتيجة دايماً <b class="txt-o">ممتازة</b>. سرعة في التنفيذ وتواصل مستمر ودعم بعد التسليم.`,name:'أحمد محمد',role:'صاحب شركة',avatar:'images/client-3.jpg',shot:'images/review-3.jpg',img:'images/project-6.jpg',badge:'FOOD CASE STUDY',tags:['تطبيق جوال','طلبات'],title:'تطبيق طلب الطعام'},
 {q:`الموقع طلع <b class="txt-o">أحسن مما تخيلت</b>، تصميم عصري وأداء سريع، وزادت مبيعات المتجر من أول شهر.`,name:'محمد السيد',role:'صاحب متجر إكسسوارات',avatar:'images/client-4.jpg',shot:'images/review-4.jpg',img:'images/project-2.jpg',badge:'SHOP CASE STUDY',tags:['تجارة إلكترونية','موقع ويب'],title:'متجر إكسسوارات'}];
 // يجرب امتدادات مختلفة (jpg / jpeg / png / webp) لحد ما يلاقي الصورة
-function tryImg(path,ok){
+const _imgCache={};
+function tryImg(path,ok,fail){
+  if(path in _imgCache){_imgCache[path]?ok(_imgCache[path]):(fail&&fail());return}
   const base=path.replace(/\.[a-z]+$/i,'');
   const exts=['jpg','jpeg','png','webp','JPG','JPEG','PNG'];
   let i=0;
   (function next(){
-    if(i>=exts.length)return;
+    if(i>=exts.length){_imgCache[path]=null;fail&&fail();return}
     const u=base+'.'+exts[i++],im=new Image();
-    im.onload=()=>ok(u);im.onerror=next;im.src=u;
+    im.onload=()=>{_imgCache[path]=u;ok(u)};im.onerror=next;im.src=u;
   })();
 }
 const $=id=>document.getElementById(id),nums=$('rvNums');let cur=0,timer;
@@ -52,10 +54,16 @@ R.forEach((_,i)=>{const b=document.createElement('button');b.className='rv-num';
 function go(n){
   cur=(n+R.length)%R.length;const r=R[cur];
   if($('rvQuote'))$('rvQuote').innerHTML=r.q;
-  const sh=$('rvShot'),wrap=$('rvShotWrap');
-  const showText=()=>{wrap.classList.add('hidden');$('rvQuote').classList.remove('hidden');$('rvLabel').classList.add('hidden');$('rvStars').classList.add('hidden')};
-  showText();
-  tryImg(r.shot,u=>{if(R[cur]!==r)return;sh.src=u;wrap.classList.remove('hidden');$('rvQuote').classList.add('hidden');$('rvLabel').classList.remove('hidden');$('rvStars').classList.remove('hidden');$('rvStars').classList.add('flex')});
+  const sh=$('rvShot'),wrap=$('rvShotWrap'),qt=$('rvQuote');
+  // مفيش حاجة تظهر لحد ما نعرف فيه صورة ولا لأ (عشان النص ميلمعش قبل الصورة)
+  wrap.classList.add('hidden');qt.classList.add('hidden');$('rvLabel').classList.add('hidden');$('rvStars').classList.add('hidden');$('rvStars').classList.remove('flex');
+  tryImg(r.shot,u=>{
+    if(R[cur]!==r)return;
+    sh.src=u;wrap.classList.remove('hidden');$('rvLabel').classList.remove('hidden');$('rvStars').classList.remove('hidden');$('rvStars').classList.add('flex');
+  },()=>{
+    if(R[cur]!==r)return;
+    qt.classList.remove('hidden');
+  });
   if($('rvName'))$('rvName').textContent=r.name;
   if($('rvRole'))$('rvRole').textContent=r.role;
   if($('rvInit'))$('rvInit').textContent=r.name.trim()[0];
